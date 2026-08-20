@@ -204,3 +204,29 @@ footer {
     max-width: 800px;
     font-size: 22px;
 }
+
+/* =========================
+   Project Hero
+   ========================= */
+
+.project-hero {
+    padding: 50px 0 70px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 60px;
+}
+
+.project-hero-text {
+    max-width: 800px;
+}
+
+.project-intro {
+    max-width: 800px;
+    font-size: 21px;
+}
+
+.project-hero img {
+    max-width: 750px;
+    width: 100%;
+    height: auto;
+    margin: 40px 0 0 0;
+}
