@@ -260,3 +260,23 @@ footer {
 .project-details p {
     margin: 0;
 }
+
+/* =========================
+   Project Figures
+   ========================= */
+
+.project-figure {
+    margin: 40px auto;
+    max-width: 850px;
+}
+
+.project-figure img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.project-figure figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+}
