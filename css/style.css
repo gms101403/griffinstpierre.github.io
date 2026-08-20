@@ -105,7 +105,8 @@ footer {
 
 @media (max-width: 800px) {
 
-    .project-grid {
+    .project-grid,
+    .featured-projects {
         grid-template-columns: 1fr;
     }
 
@@ -146,4 +147,29 @@ footer {
     padding: 12px 20px;
     border: 1px solid #333;
     border-radius: 6px;
+}
+
+/* =========================
+   Featured Projects
+   ========================= */
+
+.featured-projects {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.featured-projects article {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.featured-projects h3 {
+    margin-top: 0;
+}
+
+.featured-projects a {
+    text-decoration: none;
 }
