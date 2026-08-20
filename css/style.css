@@ -195,3 +195,12 @@ footer {
     height: auto;
     margin: 0 0 20px 0;
 }
+
+/* =========================
+   About Page
+   ========================= */
+
+.about-intro {
+    max-width: 800px;
+    font-size: 22px;
+}
