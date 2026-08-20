@@ -230,9 +230,87 @@
 
             <h2>Engineering Decisions</h2>
 
-            <p>
-                Explain important design decisions and why you made them.
-            </p>
+    <p>
+        Physical prototyping revealed several design limitations that were
+        not apparent from the initial CAD models. I used these observations
+        to guide subsequent design revisions rather than treating the first
+        prototype as a final solution.
+    </p>
+
+
+    <h3>Joint & Hinge Mechanism</h3>
+
+    <p>
+        The original hinge mechanism was reevaluated as the design developed.
+        The joint needed to provide controlled finger motion while remaining
+        compact enough for a wearable device and manufacturable through
+        additive manufacturing. The hinge design was therefore revised to
+        improve the mechanical interface and support continued iteration.
+    </p>
+
+
+    <h3>Pin and Bore Geometry</h3>
+
+    <p>
+        The mechanical pin interface was revised as prototype testing
+        revealed the limitations of the original geometry. The pin bore
+        diameter was increased from approximately 2 mm to 4 mm, while the
+        corresponding pin diameter was increased from approximately 1.8 mm
+        to 3.75 mm.
+    </p>
+
+    <p>
+        This revision highlighted the importance of designing mechanical
+        interfaces around the capabilities and tolerances of the
+        manufacturing process rather than relying only on nominal CAD
+        dimensions.
+    </p>
+
+
+    <h3>Palm Geometry & Clearance</h3>
+
+    <p>
+        The palm geometry was revised after identifying an issue with the
+        relationship between the modeled internal and external dimensions.
+        The resulting lack of clearance required the palm width to be
+        reduced from approximately 140 mm to 134 mm.
+    </p>
+
+    <p>
+        This iteration reinforced the importance of clearly defining
+        reference dimensions and verifying internal clearances when
+        developing assemblies with multiple interacting components.
+    </p>
+
+
+    <h3>Finger Geometry</h3>
+
+    <p>
+        Finger component dimensions were also refined as the design
+        progressed. Finger thickness was reduced by approximately 0.5 mm
+        to improve the overall geometry while maintaining sufficient
+        structural material.
+    </p>
+
+
+    <h3>Component Positioning</h3>
+
+    <p>
+        The position of the index-finger beam was adjusted to improve its
+        relationship with the surrounding components. The pinky-finger
+        structure also required additional consideration after a printing
+        issue resulted in reduced material in the beam.
+    </p>
+
+
+    <h3>Design Tradeoffs</h3>
+
+    <p>
+        These iterations required balancing competing considerations:
+        maintaining sufficient structural material, minimizing unnecessary
+        size and weight, providing adequate clearances, and designing
+        components that could be reliably manufactured and assembled.
+    </p>
 
         </section>
 
