@@ -17,6 +17,7 @@ body {
 
 nav {
     display: flex;
+    align-items: center;
     gap: 25px;
     padding: 25px 0;
     border-bottom: 1px solid #ddd;
@@ -24,6 +25,11 @@ nav {
 
 nav a {
     text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 
@@ -104,6 +110,11 @@ footer {
    ========================= */
 
 @media (max-width: 800px) {
+
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
 
     .project-grid,
     .featured-projects {
