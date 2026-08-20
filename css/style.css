@@ -98,3 +98,15 @@ footer {
     padding: 30px;
     margin: 0;
 }
+
+/* =========================
+   Responsive Project Grid
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
