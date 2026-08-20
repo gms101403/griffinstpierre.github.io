@@ -173,3 +173,10 @@ footer {
 .featured-projects a {
     text-decoration: none;
 }
+
+.featured-projects img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 0 20px 0;
+}
