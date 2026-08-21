@@ -246,7 +246,78 @@ footer {
 
 
 /* =========================
-   About Hero
+   Project Hero
+   ========================= */
+
+.project-hero {
+    padding: 50px 0 70px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 60px;
+}
+
+.project-hero-text {
+    max-width: 800px;
+}
+
+.project-intro {
+    max-width: 800px;
+    font-size: 21px;
+}
+
+.project-hero img {
+    max-width: 750px;
+    width: 100%;
+    height: auto;
+    margin: 40px 0 0 0;
+}
+
+
+/* =========================
+   Project Details
+   ========================= */
+
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 60px;
+}
+
+.project-details strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.project-details p {
+    margin: 0;
+}
+
+
+/* =========================
+   Project Figures
+   ========================= */
+
+.project-figure {
+    margin: 40px auto;
+    max-width: 850px;
+}
+
+.project-figure img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.project-figure figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   About Page Hero
    ========================= */
 
 .about-hero {
@@ -319,207 +390,6 @@ footer {
 
 
 /* =========================
-   Project Hero
-   ========================= */
-
-.project-hero {
-    padding: 50px 0 70px 0;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 60px;
-}
-
-.project-hero-text {
-    max-width: 800px;
-}
-
-.project-intro {
-    max-width: 800px;
-    font-size: 21px;
-}
-
-.project-hero img {
-    max-width: 750px;
-    width: 100%;
-    height: auto;
-    margin: 40px 0 0 0;
-}
-
-
-/* =========================
-   Projects Page
-   ========================= */
-
-.projects-hero {
-    padding: 40px 0 50px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.projects-hero h1 {
-    margin: 0 0 20px 0;
-}
-
-.projects-intro {
-    max-width: 800px;
-    font-size: 20px;
-}
-
-
-/* =========================
-   Project Details
-   ========================= */
-
-.project-details {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 25px;
-    padding: 30px 0;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 60px;
-}
-
-.project-details strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.project-details p {
-    margin: 0;
-}
-
-
-/* =========================
-   Project Figures
-   ========================= */
-
-.project-figure {
-    margin: 40px auto;
-    max-width: 850px;
-}
-
-.project-figure img {
-    width: 100%;
-    height: auto;
-    margin: 0;
-}
-
-.project-figure figcaption {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-
-/* =========================
-   Skills Page
-   ========================= */
-
-.skills-hero {
-    padding: 40px 0 50px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.skills-hero h1 {
-    margin: 0 0 20px 0;
-}
-
-.skills-intro {
-    max-width: 800px;
-    font-size: 20px;
-}
-
-
-/* =========================
-   Skills Grid
-   ========================= */
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
-}
-
-.skill-card {
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.skill-card h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.skill-card ul {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.skill-card li {
-    margin-bottom: 8px;
-}
-
-.skill-card-wide {
-    grid-column: 1 / -1;
-}
-
-
-/* =========================
-   Resume Page
-   ========================= */
-
-.resume-hero {
-    padding: 40px 0 50px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.resume-hero h1 {
-    margin: 0 0 20px 0;
-}
-
-.resume-intro {
-    max-width: 800px;
-    font-size: 20px;
-}
-
-.resume-card {
-    max-width: 800px;
-    padding: 35px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.resume-card h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.resume-card p {
-    margin-bottom: 25px;
-}
-
-.resume-links {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.resume-links a {
-    text-decoration: none;
-    padding: 10px 18px;
-    border: 1px solid #222;
-    border-radius: 6px;
-}
-
-.resume-links a:hover {
-    background: #f5f5f5;
-}
-
-.resume-updated {
-    font-size: 14px;
-    margin-top: 20px;
-}
-
-/* =========================
    Contact Page
    ========================= */
 
@@ -528,11 +398,19 @@ footer {
     border-bottom: 1px solid #ddd;
 }
 
+.contact-hero .eyebrow {
+    margin-bottom: 18px;
+}
+
 .contact-hero h1 {
-    max-width: 850px;
-    font-size: 52px;
-    line-height: 1.15;
+    font-size: 42px;
     margin: 0 0 25px 0;
+}
+
+.contact-intro {
+    max-width: 800px;
+    font-size: 22px;
+    line-height: 1.6;
 }
 
 
@@ -576,22 +454,6 @@ footer {
     margin-top: 0;
 }
 
-
-/* =========================
-   Responsive Contact Page
-   ========================= */
-
-@media (max-width: 800px) {
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-hero h1 {
-        font-size: 42px;
-    }
-
-}
 
 /* =========================
    Responsive Layout
@@ -652,24 +514,16 @@ footer {
         padding: 30px;
     }
 
-    .skills-grid {
+    .contact-grid {
         grid-template-columns: 1fr;
     }
 
-    .skill-card-wide {
-        grid-column: auto;
+    .contact-hero h1 {
+        font-size: 42px;
     }
 
-    .skills-intro {
-        font-size: 19px;
-    }
-
-    .resume-intro {
-        font-size: 19px;
-    }
-
-    .resume-card {
-        padding: 30px;
+    .contact-intro {
+        font-size: 20px;
     }
 
 }
