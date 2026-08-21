@@ -458,3 +458,79 @@ footer {
     }
 
 }
+
+
+/* =========================
+   Skills Page
+   ========================= */
+
+.skills-hero {
+    padding: 40px 0 50px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.skills-hero h1 {
+    margin: 0 0 20px 0;
+}
+
+.skills-intro {
+    max-width: 800px;
+    font-size: 20px;
+}
+
+
+/* =========================
+   Skills Grid
+   ========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.skill-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.skill-card ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.skill-card li {
+    margin-bottom: 8px;
+}
+
+.skill-card-wide {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================
+   Responsive Skills Page
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card-wide {
+        grid-column: auto;
+    }
+
+    .skills-intro {
+        font-size: 19px;
+    }
+
+}
