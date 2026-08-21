@@ -341,3 +341,100 @@ footer {
     }
 
 }
+
+/* =========================
+   About Page
+   ========================= */
+
+.about-hero {
+    padding: 40px 0 70px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.about-hero h1 {
+    max-width: 850px;
+    font-size: 52px;
+    line-height: 1.15;
+    margin: 0 0 25px 0;
+}
+
+.about-intro {
+    max-width: 800px;
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   About Grid
+   ========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.about-card {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.about-card h2 {
+    margin-top: 0;
+}
+
+
+/* =========================
+   About Highlight
+   ========================= */
+
+.about-highlight {
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.about-highlight h2 {
+    margin-top: 0;
+}
+
+.about-highlight p {
+    max-width: 850px;
+}
+
+
+/* =========================
+   About Bottom Section
+   ========================= */
+
+.about-bottom {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   Responsive About Page
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero h1 {
+        font-size: 42px;
+    }
+
+    .about-intro {
+        font-size: 20px;
+    }
+
+    .about-highlight {
+        padding: 30px;
+    }
+
+}
