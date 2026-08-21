@@ -105,6 +105,25 @@ footer {
     border-radius: 8px;
     padding: 30px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin: 0 0 20px 0;
+}
+
+.project-grid h2 {
+    font-size: 24px;
+    margin: 0 0 15px 0;
+}
+
+.project-grid article a {
+    margin-top: auto;
+    text-decoration: none;
 }
 
 
@@ -341,6 +360,7 @@ footer {
     }
 
 }
+
 
 /* =========================
    About Page
