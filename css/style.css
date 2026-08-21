@@ -529,7 +529,9 @@ footer {
 }
 
 .contact-hero h1 {
+    max-width: 850px;
     font-size: 52px;
+    line-height: 1.15;
     margin: 0 0 25px 0;
 }
 
@@ -553,8 +555,8 @@ footer {
 }
 
 .contact-card h2 {
-    margin: 0 0 15px 0;
     font-size: 24px;
+    margin: 0 0 15px 0;
 }
 
 .contact-card p {
