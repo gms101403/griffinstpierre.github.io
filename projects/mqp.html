@@ -43,9 +43,10 @@
                 </h1>
 
                 <p class="project-intro">
-                    Development of a wearable biomechanical measurement system
-                    designed to investigate loading and movement during
-                    pickleball.
+                    Development of a wearable biomechanical system for 
+                    monitoring loaded ankle dorsiflexion during pickleball, 
+                    with the goal of identifying potentially concerning 
+                    ranges of motion.
                 </p>
 
             </div>
@@ -102,13 +103,25 @@
             </h2>
 
             <p>
-                PLACEHOLDER — Briefly explain the problem, why it matters,
-                and what the team set out to develop.
+                Pickleball involves rapid changes in direction, dynamic 
+                movements, and repeated loading that may contribute to 
+                injury risk. Our project began with the goal of developing 
+                a wearable system that could monitor movement and loading 
+                on the court and identify biomechanical patterns that may 
+                place a player at greater risk of injury.
             </p>
 
             <p>
-                PLACEHOLDER — Briefly describe the overall system and what
-                it was intended to measure.
+                The broader system concept included force sensing and 
+                multiple IMUs to capture a range of biomechanical metrics. 
+                As the project progressed, we focused the prototype on 
+                measuring loaded ankle dorsiflexion, using tibia-over-ankle 
+                angle as an indicator of ankle range of motion. The final 
+                system integrated a FeatherSense board into a custom heel 
+                cuff and an IMU into a shank-mounted hub. A MATLAB-based 
+                application calculated and displayed the angle in the sagittal 
+                plane, allowing users to monitor their range of motion and 
+                compare measurements between the left and right sides.
             </p>
 
         </section>
@@ -121,7 +134,7 @@
         <section class="project-section">
 
             <p class="eyebrow">
-                Problem & Approach
+                The Engineering Challenge
             </p>
 
             <h2>
@@ -129,13 +142,37 @@
             </h2>
 
             <p>
-                PLACEHOLDER — Explain the engineering problem and the approach
-                your team took to address it.
+                The original system concept was intended to capture multiple 
+                biomechanical measures associated with movement and loading 
+                during pickleball. A combination of force sensing and two 
+                IMUs would have allowed the system to characterize movement 
+                across multiple planes and provide a more comprehensive 
+                picture of potentially risky movement patterns. As the 
+                project scope was refined, we selected loaded ankle 
+                dorsiflexion as a focused metric that could provide 
+                meaningful information about lower-extremity movement while 
+                remaining achievable within the project constraints.
             </p>
 
             <p>
-                PLACEHOLDER — Explain why a wearable system was selected and
-                what measurements were important.
+                Loaded ankle dorsiflexion describes the forward movement of the 
+                tibia over the foot while the foot is planted and bearing load. 
+                A target range of approximately 15–30° was used as a reference 
+                for evaluating ankle mobility. Measurements below this range may 
+                indicate reduced dorsiflexion and can be associated with altered 
+                movement strategies, potentially increasing demands on other joints 
+                or contributing to situations where a player is more susceptible 
+                to losing balance.
+            </p>
+
+            <p>
+                The goal of the final system was therefore not to diagnose or 
+                prevent injuries directly, but to provide actionable information 
+                about an individual's ankle range of motion. By monitoring the 
+                measurement on both sides and identifying values outside the target 
+                range, a user could recognize a potential limitation and take 
+                preventative measures, such as working to improve mobility or being 
+                more aware of movements that place them in potentially unfavorable positions.
             </p>
 
         </section>
