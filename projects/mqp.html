@@ -189,38 +189,80 @@
     </p>
 
     <h2>
-        Designing the Wearable System
+        Designing the Wearable Measurement System
     </h2>
 
     <p>
-        The final prototype used two wearable components to measure
-        tibia-over-ankle angle during loaded movement. A custom heel cuff
-        housed the FeatherSense electronics, while a shank-mounted hub
-        positioned an IMU relative to the lower leg. The orientation of
-        these components was used to calculate ankle dorsiflexion in the
-        sagittal plane.
+        The project began with a broader system concept intended to capture
+        multiple biomechanical measurements during pickleball. The proposed
+        architecture combined two IMUs with a force-sensing component to
+        characterize movement and loading throughout play.
     </p>
+
+
+    <h3>
+        Proposed System Architecture
+    </h3>
 
     <p>
-        The system was designed around both measurement requirements and
-        practical considerations for use during movement. The components
-        needed to remain securely positioned on the foot and shank while
-        allowing the user to move naturally and maintaining a consistent
-        sensor orientation.
+        The original design used two IMUs to measure relative motion between
+        the foot and shank, while a force-sensing component was intended to
+        provide additional information about loading. Together, these
+        measurements were intended to identify movement patterns that could
+        indicate increased injury risk.
     </p>
-
 
     <figure class="project-figure">
         <img
-            src="../images/MQP/mqp-heel-cuff-cad.png"
-            alt="CAD model of the wearable heel-cuff system"
+            src="../images/MQP/PLACEHOLDER-proposed-system-diagram.png"
+            alt="Proposed two-IMU wearable biomechanics system architecture"
         >
 
         <figcaption>
-            CAD model of the wearable system, including the custom heel-cuff
-            interface used to position the sensing hardware.
+            Proposed system architecture using two IMUs and a force-sensing
+            component to characterize movement and loading.
         </figcaption>
     </figure>
+
+
+    <h3>
+        Final System Architecture
+    </h3>
+
+    <p>
+        As the project progressed, the system was narrowed to focus on a
+        specific biomechanical measurement: tibia-over-ankle angle, also
+        referred to as loaded ankle dorsiflexion. The finalized system used
+        a single IMU positioned in the shank hub and a FeatherSense board
+        housed within the heel cuff.
+    </p>
+
+    <p>
+        The IMU and heel-mounted electronics communicated with a MATLAB-based
+        application that calculated and displayed the tibia-over-ankle angle
+        in the sagittal plane. This provided a practical way to monitor
+        ankle dorsiflexion during movement and identify measurements outside
+        the desired range.
+    </p>
+
+    <figure class="project-figure">
+        <img
+            src="../images/MQP/PLACEHOLDER-final-system-diagram.png"
+            alt="Final one-IMU wearable system architecture"
+        >
+
+        <figcaption>
+            Finalized system architecture used to measure tibia-over-ankle
+            angle in the sagittal plane.
+        </figcaption>
+    </figure>
+
+    <p>
+        A two-IMU configuration would be required to directly capture changes
+        in the relative angle across all three planes of motion. However,
+        the project ultimately focused on the sagittal-plane measurement,
+        where the primary ankle motion of interest occurs.
+    </p>
 
 
     <h3>
@@ -228,10 +270,9 @@
     </h3>
 
     <p>
-        The heel cuff provided a secure mounting location for the sensing
-        electronics while maintaining contact with the foot during loaded
-        movement. Its geometry was refined through multiple design
-        iterations to improve fit, positioning, and usability.
+        PLACEHOLDER — Explain the heel cuff design requirements, including
+        sensor placement, fit, stability, comfort, and how the design
+        evolved through iteration.
     </p>
 
 
@@ -239,7 +280,7 @@
 
         <figure class="project-figure">
             <img
-                src="../images/MQP/PLACEHOLDER.jpg"
+                src="../images/MQP/PLACEHOLDER-heel-cuff-early.jpg"
                 alt="Early heel-cuff design iteration"
             >
 
@@ -251,7 +292,7 @@
 
         <figure class="project-figure">
             <img
-                src="../images/MQP/PLACEHOLDER.jpg"
+                src="../images/MQP/PLACEHOLDER-heel-cuff-final.jpg"
                 alt="Final heel-cuff design"
             >
 
@@ -268,10 +309,9 @@
     </h3>
 
     <p>
-        The shank hub positioned the IMU relative to the tibia, providing
-        the second reference needed to determine the angle between the
-        shank and foot. The design evolved to improve sensor positioning,
-        attachment, and integration with the wearable system.
+        PLACEHOLDER — Explain the purpose of the shank hub, including IMU
+        positioning and attachment to the lower leg, and describe the major
+        design changes made during development.
     </p>
 
 
@@ -279,7 +319,7 @@
 
         <figure class="project-figure">
             <img
-                src="../images/MQP/PLACEHOLDER.jpg"
+                src="../images/MQP/PLACEHOLDER-shank-hub-early.jpg"
                 alt="Early shank hub design iteration"
             >
 
@@ -291,7 +331,7 @@
 
         <figure class="project-figure">
             <img
-                src="../images/MQP/PLACEHOLDER.jpg"
+                src="../images/MQP/PLACEHOLDER-shank-hub-final.jpg"
                 alt="Final shank hub design"
             >
 
@@ -302,9 +342,7 @@
 
     </div>
 
-
 </section>
-
 
         <!-- =========================
              Prototyping & Development
