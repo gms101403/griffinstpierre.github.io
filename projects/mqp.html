@@ -1,1397 +1,1787 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pickleball Biomechanics MQP | Griffin St. Pierre</title>
+```
+<title>Pickleball Biomechanics MQP | Griffin St. Pierre</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
+```
+
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="../about.html">About</a>
-            <a href="../projects.html">Projects</a>
-            <a href="../skills.html">Skills</a>
-            <a href="../resume.html">Resume</a>
-            <a href="../contact.html">Contact</a>
-        </nav>
-    </header>
+```
+<header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../skills.html">Skills</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../contact.html">Contact</a>
+    </nav>
+</header>
 
 
-    <main>
+<main>
 
-        <!-- =========================
-             Project Hero
-             ========================= -->
 
-        <section class="project-hero">
+    <!-- =========================
+         Project Hero
+         ========================= -->
 
-            <div class="project-hero-text">
+    <section class="project-hero">
 
-                <p class="eyebrow">
-                    Major Qualifying Project · Biomedical Engineering · Biomechanics
-                </p>
+        <p class="eyebrow">
+            Major Qualifying Project
+        </p>
 
-                <h1>
-                    Pickleball Biomechanics MQP
-                </h1>
+        <div class="project-hero-text">
 
-                <p class="project-intro">
-                    Development and validation of a wearable biomechanical
-                    system for measuring loaded ankle dorsiflexion during
-                    controlled pickleball-related movement.
-                </p>
+            <h1>
+                Pickleball Biomechanics MQP
+            </h1>
 
-            </div>
+            <p class="project-intro">
+                Development of a wearable biomechanical system for
+                measuring loaded ankle dorsiflexion during pickleball,
+                with the goal of providing useful kinematic data that
+                can help identify potentially concerning movement patterns.
+            </p>
+
+        </div>
+
+        <img
+            src="../images/MQP/mqp-heel-cuff-cad.png"
+            alt="CAD model of the wearable heel-cuff system"
+        >
+
+    </section>
+
+
+    <!-- =========================
+         Project Details
+         ========================= -->
+
+    <section class="project-details project-details-tight">
+
+        <div>
+            <strong>Role</strong>
+            <p>Mechanical / Biomedical Engineering</p>
+        </div>
+
+        <div>
+            <strong>Project Type</strong>
+            <p>Team-Based MQP</p>
+        </div>
+
+        <div>
+            <strong>Focus</strong>
+            <p>Biomechanics & Wearable Sensors</p>
+        </div>
+
+        <div>
+            <strong>Tools</strong>
+            <p>SolidWorks, MATLAB, BNO085 IMU</p>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         Overview
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Overview
+        </p>
+
+        <h2>
+            Project Overview
+        </h2>
+
+        <p>
+            Pickleball involves rapid changes in direction, dynamic
+            movements, and repeated loading that may contribute to
+            lower-extremity injury risk. Our project was developed in
+            response to a client request for a non-invasive wearable
+            device capable of providing useful kinematic data to
+            pickleball players that could support injury-prevention
+            efforts.
+        </p>
+
+        <p>
+            The original system concept included multiple inertial
+            measurement units (IMUs) and force sensing to capture a
+            broader range of biomechanical measurements during play.
+            As the project progressed, the scope was refined to focus
+            on loaded ankle dorsiflexion as a specific and measurable
+            biomechanical quantity.
+        </p>
+
+        <p>
+            The final system used a BNO085 IMU mounted in a custom
+            shank hub and connected to a microcontroller housed within
+            a 3D-printed heel cuff. The system measured the change in
+            tibia-over-ankle angle during a controlled forward-lean
+            movement. A MATLAB-based application processed the sensor
+            data, calculated range of motion, and displayed the
+            resulting measurements.
+        </p>
+
+        <p>
+            Beyond developing the wearable system itself, the project
+            investigated how ankle dorsiflexion range of motion varied
+            between college-aged and 55+ men and women and whether
+            meaningful differences existed between the left and right
+            limbs.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         Client Need
+         ========================= -->
+
+    <section class="project-highlight">
+
+        <p class="eyebrow">
+            Client Need
+        </p>
+
+        <h2>
+            Design Objective
+        </h2>
+
+        <p>
+            The client statement that guided the project was:
+            <strong>
+                "Design a non-invasive wearable device that provides
+                useful kinematic data for pickleball players to help
+                with injury prevention."
+            </strong>
+        </p>
+
+        <p>
+            This requirement established two important goals. First,
+            the system needed to provide a practical method for
+            collecting meaningful biomechanical data during movement.
+            Second, the resulting measurements needed to provide
+            information that could be interpreted in the context of
+            potentially concerning movement patterns rather than
+            simply demonstrating that a wearable sensor could collect
+            data.
+        </p>
+
+        <p>
+            The final project therefore combined wearable mechanical
+            design, inertial sensing, signal processing, validation,
+            and population-level analysis into a single measurement
+            system.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         Engineering Challenge
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            The Engineering Challenge
+        </p>
+
+        <h2>
+            From Biomechanical Question to Measurement System
+        </h2>
+
+        <p>
+            The initial system concept was intentionally broad. The
+            proposed design combined multiple IMUs with force sensing
+            to characterize movement and loading during pickleball.
+            Such a system could potentially provide information across
+            multiple planes of motion and support a broader assessment
+            of movement patterns.
+        </p>
+
+        <p>
+            As the project progressed, the scope was narrowed to a
+            specific measurement that could be developed, validated,
+            and meaningfully analyzed within the available project
+            constraints: loaded ankle dorsiflexion.
+        </p>
+
+        <p>
+            Loaded ankle dorsiflexion describes the forward progression
+            of the tibia over the foot while the foot remains planted
+            and bearing load. The project used tibia-over-ankle angle
+            as the measurable quantity and calculated range of motion
+            between a neutral standing position and the participant's
+            peak controlled dorsiflexion position.
+        </p>
+
+        <p>
+            A target range of approximately 15–30° was used as a
+            reference for evaluating loaded ankle dorsiflexion.
+            Measurements outside this range could identify a potential
+            limitation that may warrant additional mobility work,
+            evaluation, or monitoring. The system was not intended to
+            diagnose injuries or independently determine injury risk.
+        </p>
+
+        <p>
+            An important requirement of the final measurement method was
+            that the tested foot remain planted throughout the movement.
+            The participant was required to lean forward over the foot
+            while keeping the heel down and avoiding significant
+            side-to-side movement. This was necessary because the system
+            measured sagittal-plane tibia-over-ankle motion; movement of
+            the foot itself or movement outside the intended plane could
+            change the measured angle and reduce the accuracy of the
+            dorsiflexion calculation.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         System Design
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            System Design
+        </p>
+
+        <h2>
+            Designing the Wearable Measurement System
+        </h2>
+
+        <p>
+            The wearable system was designed around the need to maintain
+            a consistent geometric relationship between the foot and
+            shank while allowing the participant to perform the
+            controlled dorsiflexion movement.
+        </p>
+
+
+        <h3>
+            Proposed System Architecture
+        </h3>
+
+        <p>
+            The original architecture used two IMUs to measure relative
+            motion between the foot and shank, along with a force-sensing
+            component intended to provide additional loading information.
+            Together, these measurements were intended to characterize
+            movement and loading during pickleball.
+        </p>
+
+        <figure class="project-figure">
 
             <img
-                src="../images/MQP/mqp-heel-cuff-cad.png"
-                alt="CAD model of the wearable heel-cuff system"
+                src="../images/MQP/proposed-system-diagram.png"
+                alt="Proposed two-IMU wearable biomechanics system architecture"
             >
 
-        </section>
+            <figcaption>
+                Proposed system architecture combining two IMUs and
+                force sensing to characterize movement and loading.
+            </figcaption>
+
+        </figure>
+
+
+        <h3>
+            Final System Architecture
+        </h3>
+
+        <p>
+            The finalized system focused on sagittal-plane
+            tibia-over-ankle angle. A BNO085 IMU was mounted within
+            the shank hub while the microcontroller and supporting
+            electronics were housed in the custom heel cuff.
+        </p>
+
+        <p>
+            Positioning the components along the lower leg and foot
+            established a consistent reference relationship for the
+            measurement. The orientation data generated by the BNO085
+            was transmitted for processing in MATLAB, where the signal
+            was filtered and used to determine neutral and peak
+            tibial positions.
+        </p>
+
+        <figure class="project-figure">
+
+            <img
+                src="../images/MQP/final-system-diagram.png"
+                alt="Final one-IMU wearable system architecture"
+            >
+
+            <figcaption>
+                Finalized system architecture used to measure
+                tibia-over-ankle angle in the sagittal plane.
+            </figcaption>
+
+        </figure>
+
+
+        <figure class="project-figure project-figure-large">
+
+            <img
+                src="../images/MQP/mqp-full-device-assembly.png"
+                alt="Exploded assembly view of the finalized wearable system"
+            >
+
+            <figcaption>
+                Exploded view of the finalized wearable system showing
+                the major components and their interfaces.
+            </figcaption>
+
+        </figure>
+
+
+        <p>
+            A two-IMU configuration would be necessary to directly
+            measure relative motion across all three planes. The final
+            single-IMU configuration was intentionally focused on
+            sagittal-plane dorsiflexion because this was the primary
+            motion being investigated.
+        </p>
 
 
         <!-- =========================
-             Project Details
+             Heel Cuff Development
              ========================= -->
 
-        <section class="project-details project-details-tight">
+        <h3>
+            Heel Cuff Development
+        </h3>
 
-            <div>
-                <strong>Role</strong>
-                <p>Mechanical / Biomedical Engineering</p>
-            </div>
+        <p>
+            The heel cuff was designed to securely house the
+            microcontroller and associated electronics while maintaining
+            a stable connection to the foot. Because sensor position
+            directly affected measurement consistency, the cuff needed
+            to remain securely positioned during repeated movement.
+        </p>
 
-            <div>
-                <strong>Project Type</strong>
-                <p>Team-Based MQP</p>
-            </div>
-
-            <div>
-                <strong>Focus</strong>
-                <p>Biomechanics · Wearable Sensors</p>
-            </div>
-
-            <div>
-                <strong>Tools</strong>
-                <p>SolidWorks · MATLAB · BNO085 IMU</p>
-            </div>
-
-        </section>
+        <p>
+            The design progressed through multiple iterations addressing
+            fit, component separation, wiring access, geometry,
+            manufacturability, and ease of assembly.
+        </p>
 
 
-        <!-- =========================
-             Overview
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                Overview
-            </p>
-
-            <h2>
-                Project Overview
-            </h2>
-
-            <p>
-                Pickleball involves repeated acceleration, deceleration,
-                changes in direction, and loaded lower-extremity movement.
-                Our project investigated whether a wearable system could
-                provide useful kinematic data to help players better
-                understand movement characteristics associated with
-                potential injury risk.
-            </p>
-
-            <p>
-                The project was developed in response to the client statement:
-                <strong>Design a non-invasive wearable device that provides
-                useful kinematic data for pickleball players to help with
-                injury prevention.</strong>
-            </p>
-
-            <p>
-                The original concept included multiple inertial measurement
-                units (IMUs) and force sensing to capture a broader range of
-                biomechanical variables. As the project progressed, the scope
-                was refined to focus on loaded ankle dorsiflexion, measured
-                as the change in tibia-over-ankle angle between a neutral
-                standing position and peak forward tibial progression.
-            </p>
-
-            <p>
-                The final system combined a BNO085 IMU mounted in a custom
-                shank hub with a FeatherSense-based heel cuff and a
-                MATLAB-based processing and visualization application.
-                The system was validated against sagittal-plane video
-                measurements using Kinovea and was then used to investigate
-                differences in dorsiflexion range of motion between limbs,
-                sex groups, and age groups.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             Engineering Challenge
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                The Engineering Challenge
-            </p>
-
-            <h2>
-                From Injury-Prevention Goal to a Measurable Biomechanical Variable
-            </h2>
-
-            <p>
-                The client requested a non-invasive wearable system capable
-                of providing useful kinematic information to pickleball
-                players. Translating that broad objective into a measurable
-                engineering quantity required narrowing the problem to a
-                movement that could be measured reliably with a wearable
-                sensor.
-            </p>
-
-            <p>
-                The team selected loaded ankle dorsiflexion as the primary
-                measurement. Loaded dorsiflexion describes the forward
-                progression of the tibia over the foot while the foot remains
-                planted and bearing load. Limited dorsiflexion has been
-                associated with altered movement strategies and may be a
-                relevant factor when evaluating lower-extremity movement.
-            </p>
-
-            <p>
-                A target range of approximately 15–30° was used as a reference
-                for evaluating loaded ankle dorsiflexion. The device was not
-                intended to diagnose injuries or directly determine injury
-                risk. Instead, the goal was to provide objective kinematic
-                information that could help identify movement characteristics
-                warranting further assessment, mobility work, or other
-                preventative strategies.
-            </p>
-
-            <h3>
-                Measurement Constraint
-            </h3>
-
-            <p>
-                A critical requirement of the final measurement method was
-                maintaining a planted foot during the movement. The foot
-                wearing the device must remain planted while the participant
-                bends forward primarily through the ankle. Side-to-side
-                movement, lifting the heel, or otherwise moving the foot
-                changes the measured orientation and can introduce motion
-                that is not representative of true sagittal-plane ankle
-                dorsiflexion.
-            </p>
-
-            <p>
-                Participants were therefore instructed to begin from a
-                neutral standing position and lean forward over the planted
-                foot as far as possible without lifting the heel. They could
-                use their preferred forward-lean technique, but were instructed
-                not to lean laterally or otherwise move the foot because doing
-                so could skew the resulting ankle-angle measurement.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             System Design
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                System Design
-            </p>
-
-            <h2>
-                Designing the Wearable Measurement System
-            </h2>
-
-            <p>
-                The system was designed around a simple measurement principle:
-                by establishing a consistent reference between the foot and
-                shank, the change in orientation between a neutral position
-                and peak forward tibial progression could be used to estimate
-                loaded ankle dorsiflexion.
-            </p>
-
-
-            <h3>
-                Proposed System Architecture
-            </h3>
-
-            <p>
-                The original system concept used two IMUs and a force-sensing
-                component to capture multiple biomechanical characteristics
-                during pickleball. This broader architecture was intended to
-                provide information about movement and loading across multiple
-                planes.
-            </p>
+        <div class="project-image-grid">
 
             <figure class="project-figure">
 
                 <img
-                    src="../images/MQP/proposed-system-diagram.png"
-                    alt="Proposed two-IMU wearable biomechanics system architecture"
+                    src="../images/MQP/V1.0-Baseline-Redesign-Heel-Cuff.png"
+                    alt="Initial heel cuff design"
                 >
 
                 <figcaption>
-                    Proposed system architecture combining two IMUs and
-                    force sensing to characterize movement and loading.
+                    Initial heel cuff redesign establishing the baseline
+                    enclosure geometry.
                 </figcaption>
 
             </figure>
 
 
-            <h3>
-                Final System Architecture
-            </h3>
-
-            <p>
-                The final system was narrowed to sagittal-plane measurement
-                of tibia-over-ankle angle. A BNO085 IMU was mounted on the
-                shank hub while the microcontroller and supporting electronics
-                were housed in the heel cuff.
-            </p>
-
-            <p>
-                The BNO085 combines accelerometer, gyroscope, and magnetometer
-                measurements through onboard sensor-fusion algorithms to
-                provide orientation data. The orientation data was recorded
-                at approximately 100 Hz and exported for processing in MATLAB.
-            </p>
-
-            <p>
-                Positioning the sensor along the shank and maintaining a
-                consistent relationship between the shank hub and heel cuff
-                allowed the system to estimate the change in tibial orientation
-                relative to the foot without requiring complex geometric
-                calculations.
-            </p>
-
-            <figure class="project-figure project-figure-large">
+            <figure class="project-figure">
 
                 <img
-                    src="../images/MQP/final-system-diagram.png"
-                    alt="Final one-IMU wearable system architecture"
+                    src="../images/MQP/v1.2-dual-material-separation-heel-cuff.png"
+                    alt="Heel cuff iteration with separated components"
                 >
 
                 <figcaption>
-                    Finalized system architecture used to measure
-                    tibia-over-ankle angle in the sagittal plane.
+                    Iteration focused on component separation and
+                    integration within the enclosure.
                 </figcaption>
 
             </figure>
 
 
-            <figure class="project-figure project-figure-large">
+            <figure class="project-figure">
 
                 <img
-                    src="../images/MQP/mqp-full-device-assembly.png"
-                    alt="Exploded assembly view of the finalized wearable system"
+                    src="../images/MQP/v1.3-optimized-fit+wiring-heel-cuff.png"
+                    alt="Heel cuff iteration optimized for fit and wiring"
                 >
 
                 <figcaption>
-                    Exploded view of the finalized wearable system showing
-                    the major components and their interfaces.
+                    Iteration optimized for fit, wiring, and component
+                    accessibility.
                 </figcaption>
 
             </figure>
 
-        </section>
 
-
-        <!-- =========================
-             Mechanical Development
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                Mechanical Development
-            </p>
-
-            <h2>
-                Designing the Wearable Hardware
-            </h2>
-
-
-            <h3>
-                Heel Cuff Development
-            </h3>
-
-            <p>
-                The heel cuff was designed to house the electronics while
-                maintaining a stable connection to the foot during movement.
-                Because sensor position directly affects the measurement,
-                the cuff needed to maintain a repeatable relationship with
-                the foot without unnecessarily restricting natural motion.
-            </p>
-
-            <p>
-                The heel cuff progressed through multiple iterations addressing
-                component separation, fit, wiring access, geometry, and
-                manufacturability. Physical prototypes were used to identify
-                issues that were difficult to evaluate in CAD alone.
-            </p>
-
-
-            <div class="project-image-grid">
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/V1.0-Baseline-Redesign-Heel-Cuff.png"
-                        alt="Initial heel cuff design"
-                    >
-
-                    <figcaption>
-                        Initial heel cuff redesign establishing the baseline
-                        enclosure geometry.
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/v1.2-dual-material-separation-heel-cuff.png"
-                        alt="Heel cuff iteration with separated components"
-                    >
-
-                    <figcaption>
-                        Iteration focused on component separation and
-                        integration within the enclosure.
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/v1.3-optimized-fit+wiring-heel-cuff.png"
-                        alt="Heel cuff iteration optimized for fit and wiring"
-                    >
-
-                    <figcaption>
-                        Iteration optimized for fit, wiring, and component
-                        accessibility.
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/mqp-heel-cuff-cad.png"
-                        alt="Final heel cuff design"
-                    >
-
-                    <figcaption>
-                        Final heel cuff design after iterative refinement.
-                    </figcaption>
-
-                </figure>
-
-            </div>
-
-
-            <h3>
-                Shank Hub Development
-            </h3>
-
-            <p>
-                The shank hub provided the mounting interface for the BNO085
-                IMU and established a consistent reference location along
-                the lower leg. Its geometry was developed around the sensor's
-                size, orientation, attachment requirements, and need to remain
-                stable during movement.
-            </p>
-
-            <p>
-                Several iterations addressed strap alignment, enclosure access,
-                attachment, structural stability, and assembly. Prototype
-                observations were incorporated into subsequent designs to
-                improve the reliability of the sensor mounting interface.
-            </p>
-
-
-            <div class="project-image-grid">
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/V1.0-Prototype-Shank-Hub.png"
-                        alt="Initial shank hub design"
-                    >
-
-                    <figcaption>
-                        Initial shank hub prototype establishing the
-                        sensor-mounting concept.
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/v1.3-strap-alignment+lid-shank-hub.png"
-                        alt="Shank hub iteration addressing strap alignment and lid design"
-                    >
-
-                    <figcaption>
-                        Iteration addressing strap alignment and enclosure
-                        access.
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/v2.1-through-pin-shank-hub.png"
-                        alt="Shank hub iteration with through-pin attachment"
-                    >
-
-                    <figcaption>
-                        Iteration introducing a through-pin attachment
-                        for improved structural stability.
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/V2.3-Structural-Stability-Shank-Hub.png"
-                        alt="Final shank hub design"
-                    >
-
-                    <figcaption>
-                        Final shank hub design after structural and
-                        assembly refinements.
-                    </figcaption>
-
-                </figure>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             Prototyping & Development
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                Prototyping & Development
-            </p>
-
-            <h2>
-                From CAD to Physical Prototype
-            </h2>
-
-            <p>
-                The finalized mechanical designs were converted into physical
-                prototypes using FDM 3D printing. Prototyping allowed the team
-                to evaluate fit, sensor positioning, attachment, assembly,
-                and stability before completing the measurement system.
-            </p>
-
-            <p>
-                Physical testing revealed issues that were difficult to identify
-                in CAD alone, including adjustments needed for component fit,
-                attachment, and sensor positioning. These observations were
-                incorporated into subsequent revisions before the final system
-                was used for participant testing.
-            </p>
-
-
-            <div class="project-image-grid">
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/mqp-heel-cuff-prototype.jpg"
-                        alt="3D-printed heel cuff prototype during development"
-                    >
-
-                    <figcaption>
-                        3D-printed prototype used to evaluate fit and
-                        physical integration.
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/mqp-heel-cuff-sensor-integration.png"
-                        alt="Integrated wearable prototype with sensing hardware"
-                    >
-
-                    <figcaption>
-                        Integrated prototype with sensing hardware installed.
-                    </figcaption>
-
-                </figure>
-
-            </div>
-
-
-            <h3>
-                Final Prototype
-            </h3>
-
-            <p>
-                The completed system integrated the heel cuff, shank hub,
-                BNO085 IMU, and supporting electronics into a wearable
-                assembly. The final configuration was designed to maintain
-                consistent sensor positioning while allowing participants
-                to perform controlled loaded ankle dorsiflexion.
-            </p>
-
-
-            <figure class="project-figure project-figure-large">
+            <figure class="project-figure">
 
                 <img
-                    src="../images/MQP/mqp-testing-setup.png"
-                    alt="Final wearable biomechanics system during testing"
+                    src="../images/MQP/mqp-heel-cuff-cad.png"
+                    alt="Final heel cuff design"
                 >
 
                 <figcaption>
-                    Final integrated wearable system during biomechanical
-                    testing.
+                    Final heel cuff design after iterative refinement.
                 </figcaption>
 
             </figure>
 
-        </section>
+        </div>
 
 
         <!-- =========================
-             Measurement Methods
+             Shank Hub Development
              ========================= -->
 
-        <section class="project-section">
+        <h3>
+            Shank Hub Development
+        </h3>
 
-            <p class="eyebrow">
-                Measurement Methods
-            </p>
+        <p>
+            The shank hub provided the mounting interface for the BNO085
+            IMU and established a consistent reference location along
+            the lower leg. Its geometry was developed around the sensor's
+            size and positioning requirements while maintaining a secure
+            connection to the shank.
+        </p>
 
-            <h2>
-                Converting IMU Orientation into Ankle ROM
-            </h2>
-
-            <p>
-                The primary outcome was ankle dorsiflexion range of motion
-                (ROM), defined as the angular change between a neutral
-                standing position and peak tibial progression over the ankle
-                during a controlled forward lean.
-            </p>
-
-            <h3>
-                Data Acquisition
-            </h3>
-
-            <p>
-                During each trial, the BNO085 IMU recorded orientation data
-                at approximately 100 Hz. The recorded time-series data
-                included timestamps and Euler-angle measurements that were
-                exported for processing in MATLAB.
-            </p>
-
-            <h3>
-                MATLAB Processing
-            </h3>
-
-            <p>
-                A custom MATLAB GUI was developed to process the raw
-                orientation data. Filtering was used to reduce sensor noise
-                and small fluctuations caused by vibration or body sway.
-                A low-pass filter was applied to the roll-angle signal to
-                isolate the smooth forward tibial rotation associated with
-                dorsiflexion.
-            </p>
-
-            <p>
-                The processing workflow identified two key points within
-                each trial: the neutral angle recorded during relaxed
-                standing and the peak angle reached during maximum controlled
-                dorsiflexion. The difference between these angles was used
-                to calculate the participant's dorsiflexion ROM.
-            </p>
+        <p>
+            Multiple iterations addressed strap alignment, enclosure
+            access, attachment, structural stability, and assembly.
+            Prototype feedback was incorporated into subsequent designs
+            to improve the reliability of the sensor mounting interface.
+        </p>
 
 
-            <figure class="project-figure project-figure-large">
+        <div class="project-image-grid">
+
+            <figure class="project-figure">
 
                 <img
-                    src="../images/MQP/mqp-matlab-gui.png"
-                    alt="MATLAB interface displaying ankle angle measurements"
+                    src="../images/MQP/V1.0-Prototype-Shank-Hub.png"
+                    alt="Initial shank hub design"
                 >
 
                 <figcaption>
-                    MATLAB-based interface used to process orientation data,
-                    identify neutral and peak angles, and calculate
-                    tibia-over-ankle ROM.
+                    Initial shank hub prototype establishing the
+                    sensor-mounting concept.
                 </figcaption>
 
             </figure>
 
-        </section>
 
-
-        <!-- =========================
-             Testing Protocol
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                Testing Protocol
-            </p>
-
-            <h2>
-                Standardizing the Dorsiflexion Measurement
-            </h2>
-
-            <p>
-                Participants wore the heel cuff and shank hub while completing
-                a standardized controlled dorsiflexion task. The protocol was
-                designed to isolate sagittal-plane ankle motion while
-                maintaining a planted foot.
-            </p>
-
-            <ol>
-                <li>Place the heel cuff and shank hub on the participant.</li>
-                <li>Record the static standing angle for calibration.</li>
-                <li>Lean forward over the planted foot as far as possible without lifting the heel.</li>
-                <li>Record the peak dorsiflexion angle.</li>
-                <li>Repeat the movement five times for the tested ankle.</li>
-                <li>Repeat the same procedure for the opposite ankle.</li>
-            </ol>
-
-            <p>
-                Participants were allowed to use their preferred forward-lean
-                technique to reach peak dorsiflexion. However, they were
-                instructed not to lean laterally or move the foot during the
-                trial because those movements could introduce non-sagittal
-                motion and reduce measurement accuracy.
-            </p>
-
-            <p>
-                Testing was performed indoors on a flat court surface to
-                approximate typical pickleball conditions while maintaining
-                a controlled environment.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             Validation
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                Validation & Testing
-            </p>
-
-            <h2>
-                Validating the Wearable Measurement
-            </h2>
-
-            <p>
-                Before using the system for population-level analysis, the
-                IMU-derived dorsiflexion measurements were compared against
-                an independent reference measurement obtained from sagittal-
-                plane video analysis using Kinovea.
-            </p>
-
-            <p>
-                During validation trials, the wearable system and a video
-                camera recorded the same dorsiflexion movement. Kinovea was
-                then used to manually identify anatomical landmarks and
-                measure the ankle angle at the corresponding neutral and
-                peak positions.
-            </p>
-
-
-            <div class="project-image-grid validation-image-grid">
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/mqp-data-validation-2.png"
-                        alt="Kinovea analysis used to obtain reference ankle-angle measurements"
-                    >
-
-                    <figcaption>
-                        Kinovea analysis used to obtain reference
-                        tibia-over-ankle angle measurements.
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="project-figure">
-
-                    <img
-                        src="../images/MQP/mqp-validation-results.png"
-                        alt="Comparison of wearable system measurements with reference angle measurements"
-                    >
-
-                    <figcaption>
-                        Comparison of wearable-system measurements against
-                        the independent video-based reference.
-                    </figcaption>
-
-                </figure>
-
-            </div>
-
-
-            <h3>
-                Validation Result
-            </h3>
-
-            <p>
-                Across the validation measurements, the IMU-derived angle
-                differed from the Kinovea reference by an average of
-                approximately <strong>1.75°</strong>. This supported the
-                ability of the wearable system to capture meaningful changes
-                in tibia-over-ankle angle for the controlled measurement task.
-            </p>
-
-            <p>
-                The validation also highlighted practical limitations.
-                Side-to-side movement during some trials made it more difficult
-                to identify the exact peak dorsiflexion position in the video,
-                while camera perspective that was not perfectly perpendicular
-                to the sagittal plane could introduce additional measurement
-                error.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             Data Collection
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                Data Collection
-            </p>
-
-            <h2>
-                Investigating Dorsiflexion Across Age and Sex
-            </h2>
-
-            <p>
-                After validating the measurement approach, the system was used
-                to collect bilateral ankle dorsiflexion measurements from
-                four participant populations: college-aged men, college-aged
-                women, men age 55+, and women age 55+.
-            </p>
-
-            <p>
-                Each participant completed five trials per ankle. The five
-                trials were averaged to obtain a mean dorsiflexion ROM for
-                each ankle, which was then used for group-level analysis.
-            </p>
-
-
-            <h3>
-                Study Hypotheses
-            </h3>
-
-            <p>
-                The first hypothesis examined whether participants demonstrated
-                meaningful left-to-right differences in ankle ROM. The null
-                hypothesis stated that ROM between the left and right ankles
-                would not be statistically significant.
-            </p>
-
-            <p>
-                The second hypothesis examined whether dorsiflexion ROM differed
-                between the four populations. The null hypothesis stated that
-                ROM between the populations would not be statistically
-                significant.
-            </p>
-
-
-            <figure class="project-figure project-figure-large">
+            <figure class="project-figure">
 
                 <img
-                    src="../images/MQP/mqp-testing-setup-2.jpg"
-                    alt="Wearable system during pickleball biomechanics data collection"
+                    src="../images/MQP/v1.3-strap-alignment+lid-shank-hub.png"
+                    alt="Shank hub iteration addressing strap alignment and lid design"
                 >
 
                 <figcaption>
-                    Wearable system used during participant testing and
-                    biomechanical data collection.
+                    Iteration addressing strap alignment and enclosure
+                    access.
                 </figcaption>
 
             </figure>
 
-        </section>
 
-
-        <!-- =========================
-             Results
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                Results
-            </p>
-
-            <h2>
-                What the Data Showed
-            </h2>
-
-            <p>
-                The results showed clear differences in dorsiflexion ROM
-                between college-aged and 55+ participants, while left-to-right
-                differences within groups were not statistically significant.
-                The data also revealed an interaction between age and sex:
-                college-aged men demonstrated the greatest ROM, college-aged
-                women were lower, and both older groups decreased to similar
-                ranges.
-            </p>
-
-
-            <figure class="project-figure project-figure-large">
+            <figure class="project-figure">
 
                 <img
-                    src="../images/MQP/mqp-ankle-dorsiflexion-rom-results.png"
-                    alt="Mean ankle dorsiflexion range of motion across participant groups"
+                    src="../images/MQP/v2.1-through-pin-shank-hub.png"
+                    alt="Shank hub iteration with through-pin attachment"
                 >
 
                 <figcaption>
-                    Mean ankle dorsiflexion ROM across the four participant
-                    populations. Error bars represent ±1 standard deviation
-                    across five trials per ankle.
+                    Iteration introducing a through-pin attachment
+                    for improved structural stability.
                 </figcaption>
 
             </figure>
 
 
-            <h3>
-                Range of Motion by Population
-            </h3>
+            <figure class="project-figure">
 
-            <p>
-                College-aged men had the highest average dorsiflexion ROM,
-                with mean values of <strong>37.8°</strong> for the left ankle
-                and <strong>36.7°</strong> for the right ankle. College-aged
-                women averaged <strong>30.6°</strong> on the left and
-                <strong>30.7°</strong> on the right.
-            </p>
+                <img
+                    src="../images/MQP/V2.3-Structural-Stability-Shank-Hub.png"
+                    alt="Final shank hub design"
+                >
 
-            <p>
-                The older groups demonstrated substantially lower ROM.
-                Men 55+ averaged <strong>22.3°</strong> on the left and
-                <strong>21.6°</strong> on the right, while women 55+
-                averaged <strong>21.3°</strong> on the left and
-                <strong>20.7°</strong> on the right.
-            </p>
+                <figcaption>
+                    Final shank hub design after structural and
+                    assembly refinements.
+                </figcaption>
 
-            <p>
-                These results indicate that the largest differences occurred
-                between age groups. The sex-based difference that was present
-                in the college-aged population was no longer statistically
-                significant in the 55+ population, where men and women
-                demonstrated similar mean ROM.
-            </p>
+            </figure>
+
+        </div>
+
+    </section>
 
 
-            <h3>
-                Hypothesis 1 — Limb Symmetry
-            </h3>
+    <!-- =========================
+         Prototyping & Development
+         ========================= -->
 
-            <p>
-                Paired-samples t-tests were used to compare mean dorsiflexion
-                ROM between the left and right ankles within each population.
-                All four groups produced p-values greater than the
-                Bonferroni-adjusted significance threshold of
-                <strong>α = 0.00833</strong>.
-            </p>
+    <section class="project-section">
 
-            <div class="project-results">
+        <p class="eyebrow">
+            Prototyping & Development
+        </p>
 
-                <div>
-                    <strong>Men 55+</strong>
-                    <p>p = 0.5844</p>
-                </div>
+        <h2>
+            From CAD to Physical Prototype
+        </h2>
 
-                <div>
-                    <strong>Women 55+</strong>
-                    <p>p = 0.6402</p>
-                </div>
+        <p>
+            The mechanical components were developed through an iterative
+            CAD and FDM 3D-printing process. Physical prototypes allowed
+            the team to evaluate fit, component positioning, assembly,
+            structural stability, and sensor integration before beginning
+            the final data collection process.
+        </p>
 
-                <div>
-                    <strong>College Men</strong>
-                    <p>p = 0.8866</p>
-                </div>
+        <p>
+            Prototype testing revealed issues that were difficult to
+            identify in CAD alone. These observations informed changes
+            to component geometry, attachment methods, and sensor
+            positioning before the final system was used for participant
+            testing.
+        </p>
 
-                <div>
-                    <strong>College Women</strong>
-                    <p>p = 0.8760</p>
-                </div>
 
+        <div class="project-image-grid">
+
+            <figure class="project-figure">
+
+                <img
+                    src="../images/MQP/mqp-heel-cuff-prototype.jpg"
+                    alt="3D-printed heel cuff prototype during development"
+                >
+
+                <figcaption>
+                    3D-printed prototype used to evaluate fit and
+                    physical integration.
+                </figcaption>
+
+            </figure>
+
+
+            <figure class="project-figure">
+
+                <img
+                    src="../images/MQP/mqp-heel-cuff-sensor-integration.png"
+                    alt="Integrated wearable prototype with sensing hardware"
+                >
+
+                <figcaption>
+                    Integrated prototype with sensing hardware installed.
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+
+        <h3>
+            Final Prototype
+        </h3>
+
+        <p>
+            The completed system integrated the heel cuff, shank hub,
+            BNO085 IMU, and supporting electronics into a wearable
+            assembly. The final configuration was designed to maintain
+            consistent sensor positioning while allowing participants
+            to perform controlled loaded ankle dorsiflexion.
+        </p>
+
+
+        <figure class="project-figure project-figure-large">
+
+            <img
+                src="../images/MQP/mqp-testing-setup.png"
+                alt="Final wearable biomechanics system during testing"
+            >
+
+            <figcaption>
+                Final integrated wearable system during biomechanical
+                testing.
+            </figcaption>
+
+        </figure>
+
+    </section>
+
+
+    <!-- =========================
+         Measurement Method
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Measurement Method
+        </p>
+
+        <h2>
+            Measuring Loaded Ankle Dorsiflexion
+        </h2>
+
+        <p>
+            The primary outcome of the study was ankle dorsiflexion
+            range of motion, defined as the angular change between
+            neutral standing and peak tibial progression over the
+            planted foot during a controlled forward lean.
+        </p>
+
+        <h3>
+            Standardized Movement
+        </h3>
+
+        <p>
+            Each participant completed a static standing calibration
+            followed by a controlled dorsiflexion movement. The
+            participant leaned forward over the tested foot as far as
+            possible without lifting the heel and repeated the movement
+            five times. The same procedure was then performed on the
+            opposite foot.
+        </p>
+
+        <p>
+            The tested foot needed to remain planted throughout the
+            movement. Participants were instructed to avoid lifting the
+            heel, moving the foot, or leaning substantially to the side.
+            This requirement was important because the final system
+            measured sagittal-plane tibia-over-ankle motion. Additional
+            foot or body movement could introduce motion that was not
+            representative of true ankle dorsiflexion and therefore
+            reduce measurement accuracy.
+        </p>
+
+
+        <h3>
+            Sensor Data Processing
+        </h3>
+
+        <p>
+            The BNO085 IMU recorded orientation data at approximately
+            100 Hz. The raw orientation data was imported into a
+            custom MATLAB GUI, where filtering was applied to reduce
+            sensor noise and small fluctuations caused by vibration
+            or body sway.
+        </p>
+
+        <p>
+            The processing workflow identified the neutral standing
+            angle and the peak forward tibial angle for each trial.
+            Range of motion was then calculated from the angular
+            difference between these two positions.
+        </p>
+
+
+        <figure class="project-figure">
+
+            <img
+                src="../images/MQP/mqp-matlab-gui.png"
+                alt="MATLAB interface displaying processed ankle angle measurements"
+            >
+
+            <figcaption>
+                MATLAB-based processing interface used to inspect
+                orientation data and calculate tibia-over-ankle ROM.
+            </figcaption>
+
+        </figure>
+
+    </section>
+
+
+    <!-- =========================
+         Data Collection
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Data Collection
+        </p>
+
+        <h2>
+            Comparing Ankle Motion Across Populations
+        </h2>
+
+        <p>
+            Following development and initial testing of the wearable
+            system, the project expanded into population-level data
+            collection. Measurements were collected from four groups:
+            college-aged men, college-aged women, men age 55+, and
+            women age 55+.
+        </p>
+
+        <p>
+            Each participant provided measurements from both the left
+            and right ankles. Five trials were performed for each ankle,
+            allowing the project to calculate an average ROM while also
+            evaluating trial-to-trial repeatability.
+        </p>
+
+        <div class="project-results">
+
+            <div>
+                <strong>College Men</strong>
+                <p>
+                    15 participants; mean ROM of 37.8° for the left
+                    foot and 36.7° for the right foot.
+                </p>
             </div>
 
-            <p>
-                Because no group showed a statistically significant
-                left-to-right difference, the null hypothesis was not rejected.
-                The results did not provide evidence of systematic inter-limb
-                differences in dorsiflexion ROM within the tested populations.
-            </p>
-
-
-            <h3>
-                Hypothesis 2 — Differences in Dorsiflexion ROM
-            </h3>
-
-            <p>
-                Independent-samples t-tests were used to compare the four
-                populations. A Bonferroni-adjusted significance threshold of
-                <strong>α = 0.00833</strong> was used for the six pairwise
-                comparisons.
-            </p>
-
-            <p>
-                Every pairwise comparison was statistically significant except
-                the comparison between men 55+ and women 55+. The largest
-                differences were observed between the college-aged groups and
-                the 55+ groups.
-            </p>
-
-            <div class="project-results">
-
-                <div>
-                    <strong>College Men vs. College Women</strong>
-                    <p>Difference = 7.662° · p = 0.0013</p>
-                </div>
-
-                <div>
-                    <strong>College Men vs. Women 55+</strong>
-                    <p>Difference = 16.297° · p &lt; 0.0001</p>
-                </div>
-
-                <div>
-                    <strong>College Men vs. Men 55+</strong>
-                    <p>Difference = 15.337° · p &lt; 0.0001</p>
-                </div>
-
-                <div>
-                    <strong>College Women vs. Women 55+</strong>
-                    <p>Difference = 8.634° · p = 0.0003</p>
-                </div>
-
-                <div>
-                    <strong>College Women vs. Men 55+</strong>
-                    <p>Difference = 7.674° · p = 0.0013</p>
-                </div>
-
-                <div>
-                    <strong>Men 55+ vs. Women 55+</strong>
-                    <p>Difference = 0.960° · p = 0.9235</p>
-                </div>
-
+            <div>
+                <strong>College Women</strong>
+                <p>
+                    15 participants; mean ROM of 30.6° for the left
+                    foot and 30.7° for the right foot.
+                </p>
             </div>
 
-            <p>
-                The null hypothesis was therefore rejected because statistically
-                significant differences were found between the populations.
-                The exception was the 55+ comparison, where the difference
-                between men and women was not statistically significant.
-            </p>
-
-
-            <h3>
-                Age and Sex Trends
-            </h3>
-
-            <p>
-                The population results suggest that dorsiflexion ROM was
-                generally higher among the college-aged participants, with
-                college-aged men showing the greatest average ROM. College-aged
-                women also demonstrated higher ROM than both older populations.
-            </p>
-
-            <p>
-                In contrast, the 55+ groups converged toward a similar range.
-                Men 55+ averaged approximately 21.9° overall, while women 55+
-                averaged approximately 21.0°. The difference between these
-                groups was only 0.96° and was not statistically significant.
-            </p>
-
-            <p>
-                These findings support the broader observation that the sex
-                difference in dorsiflexion ROM present among the college-aged
-                participants became much smaller with age, while overall ROM
-                decreased substantially in both groups.
-            </p>
-
-
-            <h3>
-                Repeatability
-            </h3>
-
-            <p>
-                Trial-to-trial repeatability was evaluated using the coefficient
-                of variation across five trials for each ankle. Mean CV values
-                ranged from approximately <strong>5.1%</strong> to
-                <strong>9.15%</strong> across the four populations and two
-                limbs.
-            </p>
-
-            <p>
-                The lowest mean CV was observed for the right ankle of the
-                Men 55+ group at 5.10%, while the highest mean CV occurred
-                for the left ankle of the College Women group at 9.15%.
-                Individual CV values varied more widely, indicating that
-                repeatability was influenced by participant and trial
-                conditions.
-            </p>
-
-
-            <h3>
-                Statistical Assumptions
-            </h3>
-
-            <p>
-                Q-Q plots were used to visually assess normality for each
-                group. Most datasets followed the expected reference pattern,
-                with only minor deviations observed in some groups. Because
-                the analysis used mean values averaged across five trials per
-                participant, the resulting distributions were also less
-                influenced by individual trial variability.
-            </p>
-
-            <p>
-                With 15 participants per population, no extreme outliers,
-                and only minor deviations from normality, parametric t-tests
-                were considered appropriate for the analyses performed.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             Interpretation
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                Interpretation
-            </p>
-
-            <h2>
-                Connecting the Measurements to the Engineering Goal
-            </h2>
-
-            <p>
-                The results demonstrate how a wearable measurement system can
-                move beyond simply collecting sensor data and provide
-                information that can be interpreted at the population level.
-                The system identified meaningful differences in loaded ankle
-                dorsiflexion across the tested age and sex groups while also
-                showing no statistically significant left-to-right differences
-                within any individual population.
-            </p>
-
-            <p>
-                The observed reduction in ROM with age was particularly notable.
-                College-aged men and women showed substantially greater
-                dorsiflexion ROM than the corresponding 55+ populations,
-                while the difference between older men and women became
-                statistically insignificant. This suggests that age may have
-                a stronger relationship with the measured ROM than sex within
-                the older population tested.
-            </p>
-
-            <p>
-                These findings do not establish a direct causal relationship
-                between dorsiflexion ROM and injury occurrence. Instead, they
-                demonstrate the potential of the wearable system to collect
-                objective kinematic information that could be used to identify
-                differences, monitor changes over time, and support further
-                investigation of movement characteristics relevant to
-                pickleball injury prevention.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             Limitations
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                Limitations
-            </p>
-
-            <h2>
-                Measurement and Study Limitations
-            </h2>
-
-            <p>
-                The measurement approach was intentionally focused on
-                controlled sagittal-plane dorsiflexion rather than unrestricted
-                movement during live pickleball play. This improved consistency
-                but means the measured ROM does not capture every movement
-                strategy used during gameplay.
-            </p>
-
-            <p>
-                Because the foot must remain planted and the motion must occur
-                primarily through the ankle, participant technique can affect
-                measurement quality. Lateral movement, foot movement, or heel
-                lift can introduce additional orientation changes that are not
-                representative of the intended dorsiflexion measurement.
-            </p>
-
-            <p>
-                The validation procedure also depended on video perspective
-                and manual identification of peak motion. Side-to-side movement
-                made some peaks difficult to identify, while imperfect camera
-                alignment could introduce error into the Kinovea reference
-                measurement.
-            </p>
-
-            <p>
-                Finally, the population analysis included 15 participants in
-                each group. The results therefore provide evidence of trends
-                within the tested sample but should not be interpreted as
-                establishing universal normative values for all pickleball
-                players.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             My Contributions
-             ========================= -->
-
-        <section class="project-section">
-
-            <p class="eyebrow">
-                My Contributions
-            </p>
-
-            <h2>
-                My Role in the Project
-            </h2>
-
-            <p>
-                As part of the multidisciplinary project team, I focused
-                primarily on the mechanical design, CAD development,
-                prototyping, and physical development of the wearable system.
-                I translated sensor-placement and wearable-use requirements
-                into manufacturable mechanical components while balancing
-                fit, structural stability, component access, and assembly.
-            </p>
-
-            <ul class="project-contributions">
-
-                <li>
-                    Designed and iterated the heel cuff and shank hub
-                    components in SolidWorks around the requirements of the
-                    wearable sensing system.
-                </li>
-
-                <li>
-                    Developed physical prototypes through FDM 3D printing
-                    and used prototype observations to identify fit,
-                    stability, assembly, and manufacturability issues.
-                </li>
-
-                <li>
-                    Contributed to integration of the mechanical components
-                    with the BNO085 IMU, FeatherSense board, and associated
-                    electronics.
-                </li>
-
-                <li>
-                    Supported preparation and testing of the wearable system
-                    for participant data collection and measurement validation.
-                </li>
-
-                <li>
-                    Documented design changes and used physical testing
-                    results to guide subsequent engineering revisions.
-                </li>
-
-            </ul>
-
-        </section>
-
-
-        <!-- =========================
-             Outcome
-             ========================= -->
-
-        <section class="project-highlight">
-
-            <p class="eyebrow">
-                Outcome
-            </p>
-
-            <h2>
-                Project Outcome
-            </h2>
-
-            <p>
-                The project resulted in a validated wearable system capable
-                of measuring tibia-over-ankle angle during controlled loaded
-                dorsiflexion. The BNO085-based system produced measurements
-                that differed from the Kinovea reference by an average of
-                approximately 1.75°, providing evidence that the wearable
-                approach could capture meaningful changes in ankle position.
-            </p>
-
-            <p>
-                The final system was then used to investigate bilateral
-                symmetry and differences in dorsiflexion ROM across age and
-                sex groups. No statistically significant left-to-right
-                differences were found within any population, while significant
-                differences were found across nearly all population pairings.
-                College-aged men demonstrated the greatest ROM, while both
-                55+ groups decreased to similar lower ranges.
-            </p>
-
-            <p>
-                Beyond the physical prototype, the project provided experience
-                taking a broad client need through system definition, mechanical
-                design, wearable sensor integration, data processing, validation,
-                participant testing, and statistical analysis. The work
-                demonstrated how engineering design decisions and experimental
-                results can be connected to a broader biomedical application.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             Project Deliverables
-             ========================= -->
-
-        <section class="project-deliverables">
-
-            <p class="eyebrow">
-                Project Deliverables
-            </p>
-
-            <h2>
-                Explore the Full Project
-            </h2>
-
-            <p>
-                The resources below provide additional detail on the system
-                design, experimental methods, data, and final results.
-            </p>
-
-
-            <div class="project-links">
-
-                <a
-                    href="../documents/mqp/mqp-final-paper.pdf"
-                    target="_blank"
-                >
-                    Final Paper →
-                </a>
-
-                <a
-                    href="../documents/mqp/mqp-final-presentation.pptx"
-                    target="_blank"
-                >
-                    Final Presentation →
-                </a>
-
-                <a
-                    href="../documents/mqp/mqp-device-documentation.pdf"
-                    target="_blank"
-                >
-                    Device Documentation →
-                </a>
-
+            <div>
+                <strong>Men 55+</strong>
+                <p>
+                    15 participants; mean ROM of 22.3° for the left
+                    foot and 21.6° for the right foot.
+                </p>
             </div>
 
-
-            <h3>
-                Data & Analysis
-            </h3>
-
-            <p>
-                Supporting datasets from the project are provided below,
-                including measurements from older adults and college-aged
-                participants.
-            </p>
-
-
-            <div class="project-links">
-
-                <a
-                    href="../documents/mqp/mqp-55+-age-data.xlsx"
-                    target="_blank"
-                >
-                    Older Adults — 15 Men / 15 Women →
-                </a>
-
-                <a
-                    href="../documents/mqp/mqp-college-age-data.xlsx"
-                    target="_blank"
-                >
-                    College-Aged — 15 Men / 15 Women →
-                </a>
-
+            <div>
+                <strong>Women 55+</strong>
+                <p>
+                    15 participants; mean ROM of 21.3° for the left
+                    foot and 20.7° for the right foot.
+                </p>
             </div>
 
-        </section>
+        </div>
 
 
-    </main>
+        <figure class="project-figure project-figure-large">
+
+            <img
+                src="../images/MQP/mqp-ankle-dorsiflexion-rom-results.png"
+                alt="Ankle dorsiflexion range of motion results across study populations"
+            >
+
+            <figcaption>
+                Mean ankle dorsiflexion range of motion across the
+                four participant populations.
+            </figcaption>
+
+        </figure>
+
+    </section>
 
 
-    <footer>
-        <p>© 2026 Griffin St. Pierre</p>
-    </footer>
+    <!-- =========================
+         Hypotheses
+         ========================= -->
 
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Research Questions
+        </p>
+
+        <h2>
+            Hypotheses & Statistical Analysis
+        </h2>
+
+        <p>
+            The study used two primary hypotheses to evaluate whether
+            the wearable system could reveal meaningful differences
+            in ankle dorsiflexion and whether measurable asymmetry
+            existed between the limbs.
+        </p>
+
+
+        <h3>
+            Hypothesis 1 — Limb Symmetry
+        </h3>
+
+        <p>
+            <strong>Null Hypothesis:</strong>
+            Range of motion between the left and right ankles is not
+            statistically significant.
+        </p>
+
+        <p>
+            Paired-samples t-tests were performed within each
+            population. All groups produced p-values greater than
+            the significance threshold of α = 0.00833:
+        </p>
+
+        <ul>
+            <li>Men 55+: p = 0.5844</li>
+            <li>Women 55+: p = 0.6402</li>
+            <li>College Men: p = 0.8866</li>
+            <li>College Women: p = 0.8760</li>
+        </ul>
+
+        <p>
+            These results indicate that no statistically significant
+            differences were observed between left and right ankle
+            ROM within any of the four populations.
+        </p>
+
+        <p>
+            <strong>Conclusion:</strong>
+            The null hypothesis was not rejected. The results support
+            the presence of generally similar dorsiflexion ROM between
+            the left and right limbs within each population.
+        </p>
+
+
+        <h3>
+            Hypothesis 2 — Differences in Dorsiflexion ROM
+        </h3>
+
+        <p>
+            <strong>Null Hypothesis:</strong>
+            Range of motion between the four populations is not
+            statistically significant.
+        </p>
+
+        <p>
+            Independent-samples t-tests were used to compare the
+            populations. Statistical significance was evaluated using
+            α = 0.00833.
+        </p>
+
+        <p>
+            Statistically significant differences were observed in
+            every population comparison except the comparison between
+            Men 55+ and Women 55+:
+        </p>
+
+        <ul>
+            <li>College Men vs. College Women: p = 0.0013</li>
+            <li>College Men vs. Women 55+: p < 0.0001</li>
+            <li>College Men vs. Men 55+: p < 0.0001</li>
+            <li>College Women vs. Women 55+: p = 0.0003</li>
+            <li>College Women vs. Men 55+: p = 0.0013</li>
+            <li>Men 55+ vs. Women 55+: p = 0.9235</li>
+        </ul>
+
+        <p>
+            The results demonstrate that the college-aged male and
+            female populations differed significantly in dorsiflexion
+            ROM, with college-aged men demonstrating the higher mean
+            ROM. Both older populations demonstrated substantially
+            lower ROM values than their college-aged counterparts.
+        </p>
+
+        <p>
+            <strong>Conclusion:</strong>
+            The null hypothesis was rejected because statistically
+            significant differences were found between nearly all
+            population pairs. The exception was the Men 55+ and
+            Women 55+ comparison, which showed no statistically
+            significant difference.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         Results
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Results
+        </p>
+
+        <h2>
+            What We Found
+        </h2>
+
+        <p>
+            The final dataset revealed a clear pattern in ankle
+            dorsiflexion range of motion across age and sex groups.
+            College-aged men demonstrated the highest average ROM,
+            followed by college-aged women. Both 55+ populations
+            demonstrated substantially lower average ROM.
+        </p>
+
+        <p>
+            College-aged men demonstrated mean ROM values of 37.8°
+            on the left and 36.7° on the right. College-aged women
+            demonstrated 30.6° on the left and 30.7° on the right.
+            In comparison, men age 55+ averaged 22.3° on the left
+            and 21.6° on the right, while women age 55+ averaged
+            21.3° and 20.7°, respectively.
+        </p>
+
+        <p>
+            These results support the original hypothesis that
+            dorsiflexion ROM would differ between populations.
+            The data also revealed an age-related pattern: the
+            difference between men and women observed in the
+            college-aged groups was no longer statistically
+            significant in the 55+ groups.
+        </p>
+
+        <p>
+            In practical terms, the data suggest that the higher
+            dorsiflexion ROM observed in college-aged men relative
+            to college-aged women was accompanied by a substantial
+            reduction in ROM with age. By age 55+, both male and
+            female groups converged toward a similar lower range
+            of dorsiflexion.
+        </p>
+
+
+        <h3>
+            Population Comparison
+        </h3>
+
+        <div class="project-results">
+
+            <div>
+                <strong>Highest Mean ROM</strong>
+                <p>
+                    College Men — 37.8° left and 36.7° right.
+                </p>
+            </div>
+
+            <div>
+                <strong>College Sex Difference</strong>
+                <p>
+                    College men averaged approximately 6.6° more
+                    ROM than college women.
+                </p>
+            </div>
+
+            <div>
+                <strong>Age-Related Change</strong>
+                <p>
+                    Both male and female groups demonstrated
+                    substantially lower ROM in the 55+ population.
+                </p>
+            </div>
+
+            <div>
+                <strong>Older Population Comparison</strong>
+                <p>
+                    Men 55+ and Women 55+ did not demonstrate a
+                    statistically significant difference.
+                </p>
+            </div>
+
+        </div>
+
+
+        <h3>
+            Limb Symmetry
+        </h3>
+
+        <p>
+            Limb symmetry analysis also showed relatively similar
+            left-to-right ROM within each population. Mean symmetry
+            values ranged from 8.98% in college men to 11.17% in
+            college women. The statistical analysis found no
+            significant left-right differences in any group.
+        </p>
+
+        <p>
+            This finding is important because it indicates that the
+            population-level differences observed in ROM were not
+            driven by one limb consistently producing a different
+            measurement than the other. Instead, the primary
+            differences were observed between the demographic groups.
+        </p>
+
+
+        <figure class="project-figure project-figure-large">
+
+            <img
+                src="../images/MQP/mqp-validation-results.png"
+                alt="Comparison of wearable system measurements with reference angle measurements"
+            >
+
+            <figcaption>
+                Analysis and comparison of measured ankle motion
+                across the study populations.
+            </figcaption>
+
+        </figure>
+
+    </section>
+
+
+    <!-- =========================
+         Repeatability
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Repeatability
+        </p>
+
+        <h2>
+            Evaluating Trial-to-Trial Consistency
+        </h2>
+
+        <p>
+            Because each ankle was tested five times, the project was
+            also able to evaluate how consistently the wearable system
+            produced measurements across repeated trials. Coefficients
+            of variation (CV) were calculated for each participant
+            across the five trials.
+        </p>
+
+        <p>
+            Mean CV values for the left ankle ranged from 5.90% for
+            college men to 9.15% for college women. For the right
+            ankle, mean CV values ranged from 5.10% for men 55+ to
+            7.26% for college women.
+        </p>
+
+        <p>
+            These results provided an additional measure of system
+            consistency and helped distinguish true differences between
+            populations from variability occurring within repeated
+            measurements.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         Validation
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Validation & Testing
+        </p>
+
+        <h2>
+            Evaluating Measurement Accuracy
+        </h2>
+
+        <p>
+            Before using the wearable system for population-level
+            analysis, the measured dorsiflexion values were compared
+            against an independent reference measurement obtained from
+            sagittal-plane video analysis.
+        </p>
+
+        <p>
+            Kinovea motion analysis software was used to manually
+            identify anatomical landmarks and determine the ankle angle
+            during the neutral and peak dorsiflexion positions. The
+            resulting measurements were paired with corresponding
+            measurements from the wearable system.
+        </p>
+
+
+        <div class="project-image-grid validation-image-grid">
+
+            <figure class="project-figure">
+
+                <img
+                    src="../images/MQP/mqp-data-validation-2.png"
+                    alt="Kinovea analysis used to obtain reference ankle-angle measurements"
+                >
+
+                <figcaption>
+                    Kinovea analysis used to obtain reference
+                    tibia-over-ankle angle measurements.
+                </figcaption>
+
+            </figure>
+
+
+            <figure class="project-figure">
+
+                <img
+                    src="../images/MQP/mqp-validation-results.png"
+                    alt="Comparison of wearable system measurements with reference angle measurements"
+                >
+
+                <figcaption>
+                    Comparison of wearable-system measurements against
+                    independent reference measurements.
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+
+        <p>
+            Across the validation measurements, the wearable system
+            demonstrated an average difference of approximately
+            <strong>1.75°</strong> from the Kinovea reference
+            measurements.
+        </p>
+
+        <p>
+            This result supported the ability of the BNO085-based
+            system to capture changes in tibia-over-ankle angle with
+            reasonable agreement to the independent video-based
+            measurement method.
+        </p>
+
+
+        <h3>
+            Validation Limitations
+        </h3>
+
+        <p>
+            Validation also revealed practical limitations. During
+            some trials, participants moved slightly side-to-side,
+            making it more difficult to identify the exact frame
+            corresponding to peak sagittal-plane dorsiflexion.
+            Camera perspective was another source of potential error,
+            as the foot was not perfectly perpendicular to the camera
+            in every recording.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         Data Collection in Practice
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Data Collection in Practice
+        </p>
+
+        <h2>
+            Applying the System to Pickleball Players
+        </h2>
+
+        <p>
+            After validation, the wearable system was used to collect
+            measurements from the four participant populations. The
+            standardized movement allowed measurements to be compared
+            between participants while maintaining the same basic
+            testing conditions.
+        </p>
+
+        <p>
+            The final system was not intended to reproduce every
+            movement occurring during live pickleball play. Instead,
+            it provided a controlled method of measuring a specific
+            component of lower-extremity mobility that may be relevant
+            to pickleball movement and injury-prevention research.
+        </p>
+
+
+        <figure class="project-figure project-figure-large">
+
+            <img
+                src="../images/MQP/mqp-testing-setup-2.jpg"
+                alt="Wearable system during pickleball biomechanics testing"
+            >
+
+            <figcaption>
+                Wearable system during participant testing.
+            </figcaption>
+
+        </figure>
+
+    </section>
+
+
+    <!-- =========================
+         Statistical Assumptions
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Statistical Analysis
+        </p>
+
+        <h2>
+            Assessing the Data
+        </h2>
+
+        <p>
+            Normality was evaluated using Q-Q plots for each population
+            and foot. Most datasets were reasonably close to normal
+            distributions, with only minor deviations observed in
+            several groups.
+        </p>
+
+        <p>
+            The sample size was 15 participants per population.
+            Although the relatively small sample size limited the
+            ability to fully characterize the underlying population
+            distributions, the absence of extreme outliers and the
+            generally acceptable normality of the datasets supported
+            the use of parametric statistical tests.
+        </p>
+
+        <p>
+            Paired-samples t-tests were used to evaluate left-right
+            differences within each population. Independent-samples
+            t-tests were used to compare dorsiflexion ROM between
+            populations. A significance threshold of α = 0.00833
+            was used for the population comparisons.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         My Contributions
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            My Contributions
+        </p>
+
+        <h2>
+            My Role in the Project
+        </h2>
+
+        <p>
+            I contributed to the project across all four eight-week
+            academic terms, with my responsibilities progressing from
+            research and system definition into mechanical design,
+            prototype testing, participant data collection, analysis,
+            and final interpretation. This allowed me to participate
+            throughout the full engineering development cycle rather
+            than contributing to only a single phase of the project.
+        </p>
+
+
+        <h3>
+            A-Term — Research & System Definition
+        </h3>
+
+        <p>
+            During the first eight-week block, I focused primarily on
+            researching the biomechanics and injury-prevention context
+            surrounding pickleball, evaluating existing approaches,
+            developing the technical foundation of the project, and
+            contributing to written and presentation materials. This
+            work helped establish the initial system concept and
+            identify the biomechanical quantities that could be
+            meaningfully measured with a wearable device.
+        </p>
+
+
+        <h3>
+            B-Term — Mechanical Design & Prototyping
+        </h3>
+
+        <p>
+            During B-Term, my work shifted heavily toward mechanical
+            development of the wearable system. I designed and iterated
+            the heel cuff in SolidWorks, translating the sensor and
+            wearable requirements into a manufacturable mechanical
+            enclosure. I refined component geometry, fit, attachment,
+            component separation, wiring access, and overall
+            manufacturability through repeated design iterations.
+        </p>
+
+        <p>
+            I also continued contributing to the project's technical
+            writing and presentation materials while using prototype
+            feedback to guide subsequent design decisions.
+        </p>
+
+
+        <h3>
+            C-Term — Prototype Testing & Initial Data Collection
+        </h3>
+
+        <p>
+            During C-Term, I continued mechanical design refinement
+            while taking a much larger role in initial system testing
+            and team data collection. I helped evaluate the physical
+            wearable system, identify issues with fit, positioning,
+            and measurement consistency, and refine the testing
+            procedure before the larger participant study.
+        </p>
+
+        <p>
+            This phase connected the mechanical development work with
+            the eventual experimental protocol and helped establish
+            a repeatable process for collecting and processing the
+            sensor data.
+        </p>
+
+
+        <h3>
+            D-Term — Data Collection, Analysis & Interpretation
+        </h3>
+
+        <p>
+            During the final eight-week block, I contributed to the
+            primary participant data collection across the four study
+            populations. I also worked with the resulting datasets to
+            calculate and interpret dorsiflexion ROM, limb symmetry,
+            repeatability, and population-level differences.
+        </p>
+
+        <p>
+            This phase included interpreting statistical results,
+            connecting the measured trends back to the project's
+            hypotheses and client objective, and contributing to the
+            final technical writing and presentation materials.
+        </p>
+
+
+        <h3>
+            Engineering Contributions Across the Project
+        </h3>
+
+        <ul class="project-contributions">
+
+            <li>
+                Researched pickleball biomechanics, ankle dorsiflexion,
+                wearable sensing, and injury-prevention considerations
+                to establish the technical foundation of the project.
+            </li>
+
+            <li>
+                Designed and iterated the wearable heel cuff in
+                SolidWorks, balancing sensor integration, fit,
+                structural requirements, manufacturability, and
+                ease of assembly.
+            </li>
+
+            <li>
+                Developed physical prototypes through FDM 3D printing
+                and used prototype observations to identify and resolve
+                mechanical and integration issues.
+            </li>
+
+            <li>
+                Contributed to the development and refinement of the
+                wearable testing procedure, including controlled
+                dorsiflexion positioning and requirements for maintaining
+                a planted foot.
+            </li>
+
+            <li>
+                Supported integration of the BNO085 IMU and wearable
+                electronics with the mechanical components.
+            </li>
+
+            <li>
+                Participated in initial system testing and the final
+                participant data collection across four demographic
+                populations.
+            </li>
+
+            <li>
+                Contributed to analysis of dorsiflexion ROM, limb
+                symmetry, trial-to-trial repeatability, and
+                population-level differences.
+            </li>
+
+            <li>
+                Contributed to validation of the wearable measurement
+                against Kinovea-based video measurements.
+            </li>
+
+            <li>
+                Helped interpret statistical findings and connect
+                experimental results to the project's hypotheses,
+                engineering objectives, and client requirements.
+            </li>
+
+            <li>
+                Contributed throughout all four terms to technical
+                documentation, written reports, presentation materials,
+                and final project communication.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =========================
+         Engineering Lessons
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Engineering Lessons
+        </p>
+
+        <h2>
+            What I Learned
+        </h2>
+
+        <p>
+            The project reinforced the importance of developing a
+            measurement system around the limitations of both the
+            sensing technology and the physical testing environment.
+            A theoretically useful measurement is only meaningful when
+            the mechanical system can position the sensor consistently
+            and the testing protocol can control the variables that
+            influence the measurement.
+        </p>
+
+        <p>
+            The project also demonstrated the value of iterative
+            engineering development. Mechanical design, prototyping,
+            sensor integration, testing, and data analysis were not
+            independent stages. Findings from each stage influenced
+            decisions made during the next stage of development.
+        </p>
+
+        <p>
+            Finally, the population-level analysis demonstrated the
+            importance of separating engineering performance from
+            interpretation of the resulting data. Validating the
+            wearable system established that it could produce useful
+            measurements, while statistical analysis was then necessary
+            to determine whether observed differences between
+            populations were meaningful.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         Limitations
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Limitations
+        </p>
+
+        <h2>
+            System & Study Limitations
+        </h2>
+
+        <p>
+            Several limitations should be considered when interpreting
+            the results of the project.
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Sagittal-plane measurement:</strong>
+                The final system focused on tibia-over-ankle motion in
+                the sagittal plane and did not directly measure relative
+                motion across all three planes.
+            </li>
+
+            <li>
+                <strong>Planted-foot requirement:</strong>
+                Accurate measurement depended on the tested foot
+                remaining planted while the participant performed the
+                forward-lean movement. Foot movement or substantial
+                side-to-side motion could introduce measurement error.
+            </li>
+
+            <li>
+                <strong>Controlled movement rather than live play:</strong>
+                The testing protocol isolated dorsiflexion using a
+                controlled movement and therefore did not reproduce the
+                full complexity of live pickleball movement.
+            </li>
+
+            <li>
+                <strong>Validation method:</strong>
+                Kinovea measurements were affected by camera perspective
+                and difficulty identifying the exact peak frame during
+                trials involving unintended movement.
+            </li>
+
+            <li>
+                <strong>Sample size:</strong>
+                Each population contained 15 participants, limiting
+                the ability to generalize the results to the broader
+                population of pickleball players.
+            </li>
+
+            <li>
+                <strong>Single IMU architecture:</strong>
+                The final system used one BNO085 IMU for the primary
+                measurement, limiting the system's ability to directly
+                characterize three-dimensional relative motion.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =========================
+         Outcome
+         ========================= -->
+
+    <section class="project-highlight">
+
+        <p class="eyebrow">
+            Outcome
+        </p>
+
+        <h2>
+            Project Outcome
+        </h2>
+
+        <p>
+            The project resulted in a functional wearable measurement
+            system capable of quantifying tibia-over-ankle angle and
+            calculating loaded ankle dorsiflexion ROM. The system was
+            validated against an independent Kinovea-based measurement,
+            with an average difference of approximately 1.75°, before
+            being used for participant data collection.
+        </p>
+
+        <p>
+            Population-level analysis demonstrated statistically
+            significant differences in dorsiflexion ROM across nearly
+            all demographic comparisons. College-aged men demonstrated
+            the highest average ROM, followed by college-aged women,
+            while both 55+ groups demonstrated substantially lower
+            ROM. The difference between men and women was statistically
+            significant among the college-aged participants but was no
+            longer significant in the 55+ population.
+        </p>
+
+        <p>
+            No statistically significant left-right differences were
+            identified within any population, supporting the first
+            hypothesis that the measured ROM was generally symmetrical
+            between limbs.
+        </p>
+
+        <p>
+            Ultimately, the project demonstrated how a wearable
+            biomechanical system can progress from a client need and
+            broad system concept through mechanical design, rapid
+            prototyping, sensor integration, validation, controlled
+            data collection, and statistical interpretation. The final
+            system provides a foundation for future work involving
+            additional kinematic measurements, more representative
+            pickleball movements, and expanded participant populations.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         Future Development
+         ========================= -->
+
+    <section class="project-section">
+
+        <p class="eyebrow">
+            Future Development
+        </p>
+
+        <h2>
+            Where the System Could Go Next
+        </h2>
+
+        <p>
+            Future development could expand the system beyond controlled
+            sagittal-plane dorsiflexion measurements to provide a more
+            complete picture of lower-extremity movement during
+            pickleball.
+        </p>
+
+        <h3>
+            Multi-Plane Kinematic Measurement
+        </h3>
+
+        <p>
+            Additional IMUs could be incorporated to measure relative
+            motion across multiple anatomical segments and planes,
+            allowing the system to characterize a broader range of
+            movement patterns.
+        </p>
+
+        <h3>
+            Dynamic Pickleball Testing
+        </h3>
+
+        <p>
+            Future testing could evaluate dorsiflexion and other
+            kinematic variables during actual pickleball movements,
+            including lateral movement, lunging, cutting, and
+            directional changes.
+        </p>
+
+        <h3>
+            Expanded Population Studies
+        </h3>
+
+        <p>
+            A larger and more diverse participant population would
+            allow the observed age- and sex-related trends to be
+            investigated more thoroughly and improve the
+            generalizability of the findings.
+        </p>
+
+        <h3>
+            Longitudinal Monitoring
+        </h3>
+
+        <p>
+            Repeated measurements over time could allow the system to
+            track changes in ankle mobility during training,
+            rehabilitation, or physical therapy.
+        </p>
+
+        <h3>
+            Integrated Injury-Prevention Tool
+        </h3>
+
+        <p>
+            With additional validated measurements and clinical or
+            biomechanical reference data, future versions could provide
+            more comprehensive feedback to users about movement
+            characteristics that may warrant further assessment.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         Project Deliverables
+         ========================= -->
+
+    <section class="project-deliverables">
+
+        <p class="eyebrow">
+            Project Deliverables
+        </p>
+
+        <h2>
+            Explore the Full Project
+        </h2>
+
+        <p>
+            The resources below provide additional detail on the
+            development, testing, analysis, and final results of
+            the project.
+        </p>
+
+
+        <div class="project-links">
+
+            <a
+                href="../documents/mqp/mqp-final-paper.pdf"
+                target="_blank"
+            >
+                Final Paper →
+            </a>
+
+            <a
+                href="../documents/mqp/mqp-final-presentation.pptx"
+                target="_blank"
+            >
+                Final Presentation →
+            </a>
+
+        </div>
+
+
+        <h3>
+            Device Documentation
+        </h3>
+
+        <p>
+            Detailed documentation of the final wearable system,
+            including device setup, component integration, and
+            operating procedures, is provided below.
+        </p>
+
+        <div class="project-links">
+
+            <a
+                href="../documents/mqp/mqp-device-documentation.pdf"
+                target="_blank"
+            >
+                View Device Documentation →
+            </a>
+
+        </div>
+
+
+        <h3>
+            Data & Analysis
+        </h3>
+
+        <p>
+            Supporting datasets from the project are provided below,
+            including measurements from older adults and
+            college-aged participants.
+        </p>
+
+
+        <div class="project-links">
+
+            <a
+                href="../documents/mqp/mqp-55+-age-data.xlsx"
+                target="_blank"
+            >
+                Older Adults — 15 Men / 15 Women →
+            </a>
+
+            <a
+                href="../documents/mqp/mqp-college-age-data.xlsx"
+                target="_blank"
+            >
+                College-Aged — 15 Men / 15 Women →
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+    <p>© 2026 Griffin St. Pierre</p>
+</footer>
+```
 
 </body>
 
