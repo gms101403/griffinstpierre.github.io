@@ -461,13 +461,18 @@ footer {
    Validation Image Grid
    ========================= */
 
+/* Gives the validation-results figure
+   additional horizontal space while
+   keeping both figures on the same row. */
+
 .validation-image-grid {
-    grid-template-columns: 0.65fr 1.35fr;
+    grid-template-columns: 0.7fr 1.3fr;
     align-items: start;
 }
 
 .validation-image-grid .project-figure {
-    width: 100%;
+    margin: 0;
+    max-width: none;
 }
 
 .validation-image-grid .project-figure img {
@@ -475,11 +480,6 @@ footer {
     height: auto;
     object-fit: contain;
 }
-
-.validation-image-grid .project-figure figcaption {
-    margin-top: 10px;
-}
-
 
 /* =========================
    Project Results
