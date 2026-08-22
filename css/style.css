@@ -331,9 +331,9 @@ footer {
    ========================= */
 
 .project-hero {
-    padding: 50px 0 70px 0;
+    padding: 50px 0 40px 0;
     border-bottom: 1px solid #ddd;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 .project-hero-text {
@@ -373,6 +373,10 @@ footer {
 
 .project-details p {
     margin: 0;
+}
+
+.project-details-tight {
+    margin-top: 0;
 }
 
 
