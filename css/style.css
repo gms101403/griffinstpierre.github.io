@@ -466,7 +466,7 @@ footer {
    keeping both figures on the same row. */
 
 .validation-image-grid {
-    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-columns: 0.65fr 1.35fr;
     align-items: start;
 }
 
