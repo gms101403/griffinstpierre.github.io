@@ -26,6 +26,7 @@
 
     <main>
 
+
         <!-- =========================
              Project Hero
              ========================= -->
@@ -43,9 +44,9 @@
                 </h1>
 
                 <p class="project-intro">
-                    Development of a wearable biomechanical system for 
-                    monitoring loaded ankle dorsiflexion during pickleball, 
-                    with the goal of identifying potentially concerning 
+                    Development of a wearable biomechanical system for
+                    monitoring loaded ankle dorsiflexion during pickleball,
+                    with the goal of identifying potentially concerning
                     ranges of motion.
                 </p>
 
@@ -103,32 +104,33 @@
             </h2>
 
             <p>
-                Pickleball involves rapid changes in direction, dynamic 
-                movements, and repeated loading that may contribute to 
-                injury risk. Our project began with the goal of developing 
-                a wearable system that could monitor movement and loading 
-                on the court and identify biomechanical patterns that may 
+                Pickleball involves rapid changes in direction, dynamic
+                movements, and repeated loading that may contribute to
+                injury risk. Our project began with the goal of developing
+                a wearable system that could monitor movement and loading
+                on the court and identify biomechanical patterns that may
                 place a player at greater risk of injury.
             </p>
 
             <p>
-                The broader system concept included force sensing and 
-                multiple IMUs to capture a range of biomechanical metrics. 
-                As the project progressed, we focused the prototype on 
-                measuring loaded ankle dorsiflexion, using tibia-over-ankle 
-                angle as an indicator of ankle range of motion. The final 
-                system integrated a FeatherSense board into a custom heel 
-                cuff and an IMU into a shank-mounted hub. A MATLAB-based 
-                application calculated and displayed the angle in the sagittal 
-                plane, allowing users to monitor their range of motion and 
-                compare measurements between the left and right sides.
+                The broader system concept included force sensing and
+                multiple IMUs to capture a range of biomechanical metrics.
+                As the project progressed, we focused the prototype on
+                measuring loaded ankle dorsiflexion, using tibia-over-ankle
+                angle as an indicator of ankle range of motion. The final
+                system integrated a FeatherSense board into a custom heel
+                cuff and an IMU into a shank-mounted hub. A MATLAB-based
+                application calculated and displayed the angle in the
+                sagittal plane, allowing users to monitor their range of
+                motion and compare measurements between the left and right
+                sides.
             </p>
 
         </section>
 
 
         <!-- =========================
-             Problem & Approach
+             Engineering Challenge
              ========================= -->
 
         <section class="project-section">
@@ -142,634 +144,795 @@
             </h2>
 
             <p>
-                The original system concept was intended to capture multiple 
-                biomechanical measures associated with movement and loading 
-                during pickleball. A combination of force sensing and two 
-                IMUs would have allowed the system to characterize movement 
-                across multiple planes and provide a more comprehensive 
-                picture of potentially risky movement patterns. As the 
-                project scope was refined, we selected loaded ankle 
-                dorsiflexion as a focused metric that could provide 
-                meaningful information about lower-extremity movement while 
-                remaining achievable within the project constraints.
+                The original system concept was intended to capture multiple
+                biomechanical measures associated with movement and loading
+                during pickleball. A combination of force sensing and two
+                IMUs would have allowed the system to characterize movement
+                across multiple planes and provide a more comprehensive
+                picture of potentially concerning movement patterns.
             </p>
 
             <p>
-                Loaded ankle dorsiflexion describes the forward movement of the 
-                tibia over the foot while the foot is planted and bearing load. 
-                A target range of approximately 15–30° was used as a reference 
-                for evaluating ankle mobility. Measurements below this range may 
-                indicate reduced dorsiflexion and can be associated with altered 
-                movement strategies, potentially increasing demands on other joints 
-                or contributing to situations where a player is more susceptible 
-                to losing balance.
+                As the project scope was refined, we selected loaded ankle
+                dorsiflexion as a focused metric that could provide meaningful
+                information about lower-extremity movement while remaining
+                achievable within the project constraints.
             </p>
 
             <p>
-                The goal of the final system was therefore not to diagnose or 
-                prevent injuries directly, but to provide actionable information 
-                about an individual's ankle range of motion. By monitoring the 
-                measurement on both sides and identifying values outside the target 
-                range, a user could recognize a potential limitation and take 
-                preventative measures, such as working to improve mobility or being 
-                more aware of movements that place them in potentially unfavorable positions.
+                Loaded ankle dorsiflexion describes the forward movement of
+                the tibia over the foot while the foot is planted and bearing
+                load. A target range of approximately 15–30° was used as a
+                reference for evaluating ankle mobility. Measurements below
+                this range may indicate reduced dorsiflexion and can be
+                associated with altered movement strategies, potentially
+                increasing demands on other joints or contributing to reduced
+                stability.
+            </p>
+
+            <p>
+                The goal of the final system was therefore not to diagnose
+                or prevent injuries directly, but to provide information
+                about an individual's ankle range of motion. By monitoring
+                the measurement on both sides and identifying values outside
+                the target range, a user could recognize a potential
+                limitation and take preventative measures, such as working
+                to improve mobility or being more aware of movements that
+                place them in potentially unfavorable positions.
             </p>
 
         </section>
 
 
-<!-- =========================
-     System Design
-     ========================= -->
-
-<section class="project-section">
-
-    <p class="eyebrow">
-        System Design
-    </p>
-
-    <h2>
-        Designing the Wearable Measurement System
-    </h2>
-
-    <p>
-        The project began with a broader system concept intended to capture
-        multiple biomechanical measurements during pickleball. The proposed
-        architecture combined two IMUs with a force-sensing component to
-        characterize movement and loading throughout play.
-    </p>
-
-
-    <h3>
-        Proposed System Architecture
-    </h3>
-
-    <p>
-        The original design used two IMUs to measure relative motion between
-        the foot and shank, while a force-sensing component was intended to
-        provide additional information about loading. Together, these
-        measurements were intended to identify movement patterns that could
-        indicate increased injury risk.
-    </p>
-
-    <figure class="project-figure">
-        <img
-            src="../images/MQP/proposed-system-diagram.png"
-            alt="Proposed two-IMU wearable biomechanics system architecture"
-        >
-
-        <figcaption>
-            Proposed system architecture using two IMUs and a force-sensing
-            component to characterize movement and loading.
-        </figcaption>
-    </figure>
-
-
-    <h3>
-        Final System Architecture
-    </h3>
-
-    <p>
-        As the project progressed, the system was narrowed to focus on a
-        specific biomechanical measurement: tibia-over-ankle angle, also
-        referred to as loaded ankle dorsiflexion. The finalized system used
-        a single IMU positioned in the shank hub and a FeatherSense board
-        housed within the heel cuff.
-    </p>
-
-    <p>
-        The IMU and heel-mounted electronics communicated with a MATLAB-based
-        application that calculated and displayed the tibia-over-ankle angle
-        in the sagittal plane. This provided a practical way to monitor
-        ankle dorsiflexion during movement and identify measurements outside
-        the desired range.
-    </p>
-
-    <figure class="project-figure">
-        <img
-            src="../images/MQP/final-system-diagram.png"
-            alt="Final one-IMU wearable system architecture"
-        >
-
-        <figcaption>
-            Finalized system architecture used to measure tibia-over-ankle
-            angle in the sagittal plane.
-        </figcaption>
-    </figure>
-
-    <p>
-        A two-IMU configuration would be required to directly capture changes
-        in the relative angle across all three planes of motion. However,
-        the project ultimately focused on the sagittal-plane measurement,
-        where the primary ankle motion of interest occurs.
-    </p>
-
-
-<h3>
-    Heel Cuff Development
-</h3>
-
-<p>
-    The heel cuff was designed to securely house the FeatherSense board
-    while maintaining a stable connection to the foot during movement.
-    Because the device was intended to measure ankle motion during
-    pickleball, the cuff needed to provide consistent positioning without
-    significantly restricting natural movement.
-</p>
-
-<p>
-    The design went through several iterations as the team refined the
-    fit, geometry, component placement, and manufacturability of the
-    enclosure. Prototype testing helped identify issues that were not
-    apparent in the initial CAD designs, leading to changes in the cuff
-    dimensions and overall geometry.
-</p>
-
-<div class="project-image-grid">
-
-    <figure class="project-figure">
-        <img
-            src="../images/MQP/V1.0-Baseline-Redesign-Heel-Cuff.png"
-            alt="Early heel-cuff design iteration"
-        >
-
-        <figcaption>
-            Early heel-cuff design iteration.
-        </figcaption>
-    </figure>
-
-
-    <figure class="project-figure">
-        <img
-            src="../images/MQP/mqp-heel-cuff-cad.png"
-            alt="Final heel-cuff design"
-        >
-
-        <figcaption>
-            Final heel-cuff design after iterative refinement.
-        </figcaption>
-    </figure>
-
-</div>
-
-
-<h3>
-    Shank Hub Development
-</h3>
-
-<p>
-    The shank hub served as the mounting interface for the inertial
-    measurement unit and provided a consistent reference location along
-    the lower leg. Its geometry was developed around the size and
-    positioning requirements of the IMU while maintaining a secure
-    connection to the shank during movement.
-</p>
-
-<p>
-    Several design iterations were used to refine the hub's dimensions,
-    mounting features, and integration with the rest of the wearable
-    system. Testing and prototyping informed changes to improve fit,
-    stability, and ease of assembly while keeping the system lightweight
-    and unobtrusive.
-</p>
-
-<div class="project-image-grid">
-
-    <figure class="project-figure">
-        <img
-            src="../images/MQP/V1.0-Prototype-Shank-Hub.png"
-            alt="Early shank hub design iteration"
-        >
-
-        <figcaption>
-            Early shank hub design iteration.
-        </figcaption>
-    </figure>
-
-
-    <figure class="project-figure">
-        <img
-            src="../images/MQP/V2.3-Structural-Stability-Shank-Hub.png"
-            alt="Final shank hub design"
-        >
-
-        <figcaption>
-            Final shank hub design.
-        </figcaption>
-    </figure>
-
-</div>
-    
-</section>
-
-<!-- =========================
-     Prototyping & Development
-     ========================= -->
-
-<section class="project-section">
-
-    <p class="eyebrow">
-        Prototyping & Development
-    </p>
-
-    <h2>
-        From CAD to Physical Prototype
-    </h2>
-
-    <p>
-        The finalized designs were converted into physical prototypes using
-        FDM 3D printing. Prototyping allowed the team to evaluate the fit,
-        positioning, assembly, and stability of the wearable components
-        before integrating the sensing hardware.
-    </p>
-
-    <p>
-        Physical testing revealed issues that were difficult to identify in
-        CAD alone, including adjustments needed for component fit,
-        attachment, and sensor positioning. These findings were incorporated
-        into subsequent design iterations before the final system was used
-        for data collection.
-    </p>
-
-
-    <div class="project-image-grid">
-
-        <figure class="project-figure">
-            <img
-                src="../images/MQP/mqp-heel-cuff-prototype.jpg"
-                alt="3D-printed prototype during development"
-            >
-
-            <figcaption>
-                3D-printed prototype during development.
-            </figcaption>
-        </figure>
-
-
-        <figure class="project-figure">
-            <img
-                src="../images/MQP/mqp-heel-cuff-sensor-integration.png"
-                alt="Integrated wearable prototype"
-            >
-
-            <figcaption>
-                Integrated wearable prototype with sensing hardware.
-            </figcaption>
-        </figure>
-
-    </div>
-
-
-    <h3>
-        Final Prototype
-    </h3>
-
-    <p>
-        The completed system integrated the heel cuff, shank hub, and
-        sensing electronics into a wearable assembly. The final prototype
-        was designed to maintain consistent sensor positioning while
-        allowing the user to perform loaded ankle movements representative
-        of those encountered during play.
-    </p>
-
-
-    <figure class="project-figure project-figure-large">
-        <img
-            src="../images/MQP/mqp-testing-setup.png"
-            alt="Final wearable biomechanics prototype"
-        >
-
-        <figcaption>
-            Final integrated prototype used for biomechanical testing.
-        </figcaption>
-    </figure>
-
-</section>
-
-        
         <!-- =========================
-     Data Collection
-     ========================= -->
+             System Design
+             ========================= -->
 
-<section class="project-section">
+        <section class="project-section">
 
-    <p class="eyebrow">
-        Data Collection
-    </p>
+            <p class="eyebrow">
+                System Design
+            </p>
 
-    <h2>
-        Measuring Ankle Motion During Pickleball
-    </h2>
-
-    <p>
-        The finalized system was used to measure tibia-over-ankle angle
-        during pickleball movement. The FeatherSense board housed in the
-        heel cuff communicated with an IMU mounted in the shank hub,
-        allowing the system to calculate ankle flexion in the sagittal
-        plane.
-    </p>
-
-    <p>
-        The measured angle was displayed through a MATLAB-based application
-        and GUI, allowing users to observe their ankle position during
-        movement and record measurements for later evaluation. This
-        provided a practical way to identify whether an athlete was
-        consistently reaching an appropriate range of loaded dorsiflexion.
-    </p>
-
-
-    <div class="project-image-grid">
-
-        <figure class="project-figure">
-            <img
-                src="../images/MQP/mqp-matlab-gui.png"
-                alt="Experimental setup for biomechanical data collection"
-            >
-
-            <figcaption>
-                Experimental setup used to collect ankle-angle measurements.
-            </figcaption>
-        </figure>
-
-
-        <figure class="project-figure">
-            <img
-                src="../images/MQP/mqp-testing-setup-2.jpg"
-                alt="Wearable system during pickleball data collection"
-            >
-
-            <figcaption>
-                Wearable system during movement testing.
-            </figcaption>
-        </figure>
-
-    </div>
-
-
-    <h3>
-        Using the Measurement in Practice
-    </h3>
-
-    <p>
-        Rather than providing an immediate injury warning, the system was
-        ultimately designed as an informational tool. Recorded measurements
-        could be used to compare ankle motion between the left and right
-        sides and determine whether an athlete was consistently reaching
-        the desired range of loaded dorsiflexion.
-    </p>
-
-    <p>
-        A target range of approximately 15–30 degrees was used as a
-        reference for evaluating ankle motion. Measurements outside this
-        range could indicate an area where additional assessment,
-        training, or preventative strategies may be appropriate.
-    </p>
-
-
-    <p>
-        <a href="../documents/PLACEHOLDER" target="_blank">
-            View Data Collection Materials →
-        </a>
-    </p>
-
-</section>
-
-
-<!-- =========================
-     Validation
-     ========================= -->
-
-<section class="project-section">
-
-    <p class="eyebrow">
-        Validation & Testing
-    </p>
-
-    <h2>
-        Evaluating Measurement Accuracy
-    </h2>
-
-    <p>
-        With the final wearable configuration established, testing focused
-        on determining whether the system could accurately measure the
-        tibia-over-ankle angle used to characterize loaded ankle dorsiflexion.
-        Because the device was intended to provide users with information
-        about their ankle motion, the measurement needed to be sufficiently
-        consistent to distinguish values within and outside the desired range.
-    </p>
-
-    <p>
-        The wearable system's angle measurements were compared against a
-        reference measurement to evaluate the accuracy and consistency of
-        the calculated angle. Testing was performed across a range of ankle
-        positions to determine how closely the system's output followed the
-        expected change in angle.
-    </p>
-
-
-    <figure class="project-figure">
-
-        <img
-            src="../images/MQP/mqp-data-validation-2.png"
-            alt="Comparison of wearable system measurements with reference angle measurements"
-        >
-
-        <figcaption>
-            Comparison between the wearable system's calculated
-            tibia-over-ankle angle and the reference measurement.
-        </figcaption>
-
-    </figure>
-
-
-    <p>
-        The testing demonstrated that the system was capable of capturing
-        changes in ankle angle and providing a repeatable measurement through
-        the MATLAB-based interface. These results supported the use of the
-        system as an informative tool for monitoring loaded ankle dorsiflexion
-        during movement.
-    </p>
-
-</section>
-
-
-<!-- =========================
-     Results
-     ========================= -->
-
-<section class="project-section">
-
-    <p class="eyebrow">
-        Results
-    </p>
-
-    <h2>
-        What We Found
-    </h2>
-
-    <p>
-        The final system successfully measured tibia-over-ankle angle in the
-        sagittal plane and displayed the calculated angle through a MATLAB-based
-        interface. This provided a practical way to monitor loaded ankle
-        dorsiflexion during movement and identify whether measurements fell
-        within the desired 15–30° range.
-    </p>
-
-    <p>
-        The results demonstrated the potential for a wearable system to provide
-        users with actionable information about their ankle motion. Rather than
-        directly preventing injury, the system was designed to increase
-        awareness of potentially elevated-risk movement patterns so that
-        preventative measures could be taken.
-    </p>
-
-
-    <figure class="project-figure project-figure-large">
-
-        <img
-            src="../images/MQP/mqp-ankle-dorsiflexion-rom-results.png"
-            alt="Key results from biomechanical testing"
-        >
-
-        <figcaption>
-            Key results demonstrating the system's ability to measure
-            tibia-over-ankle angle during testing.
-        </figcaption>
-
-    </figure>
-
-
-    <div class="project-results">
-
-        <div>
-            <strong>Angle Measurement</strong>
+            <h2>
+                Designing the Wearable Measurement System
+            </h2>
 
             <p>
-                The finalized system successfully calculated tibia-over-ankle
-                angle in the sagittal plane using the wearable IMU system.
+                The project began with a broader system concept intended to
+                capture multiple biomechanical measurements during pickleball.
+                The proposed architecture combined two IMUs with a force-sensing
+                component to characterize movement and loading throughout play.
             </p>
-        </div>
 
 
-        <div>
-            <strong>Target Range</strong>
+            <h3>
+                Proposed System Architecture
+            </h3>
 
             <p>
-                Measurements could be compared against the desired
-                15–30° range of loaded ankle dorsiflexion to help identify
-                potentially concerning movement patterns.
+                The original design used two IMUs to measure relative motion
+                between the foot and shank, while a force-sensing component
+                was intended to provide additional information about loading.
+                Together, these measurements were intended to identify movement
+                patterns that could indicate increased injury risk.
             </p>
-        </div>
+
+            <figure class="project-figure">
+
+                <img
+                    src="../images/MQP/proposed-system-diagram.png"
+                    alt="Proposed two-IMU wearable biomechanics system architecture"
+                >
+
+                <figcaption>
+                    Proposed system architecture using two IMUs and a
+                    force-sensing component to characterize movement and loading.
+                </figcaption>
+
+            </figure>
 
 
-        <div>
-            <strong>System Limitation</strong>
+            <h3>
+                Final System Architecture
+            </h3>
 
             <p>
-                The finalized system measured sagittal-plane motion using a
-                single IMU. A two-IMU configuration would be required to
-                directly capture relative motion across all three planes.
+                As the project progressed, the system was narrowed to focus
+                on tibia-over-ankle angle, also referred to as loaded ankle
+                dorsiflexion. The finalized system used an IMU positioned in
+                the shank hub with the FeatherSense board housed within the
+                heel cuff.
             </p>
-        </div>
 
-    </div>
+            <p>
+                The sensing hardware communicated with a MATLAB-based
+                application that calculated and displayed the
+                tibia-over-ankle angle in the sagittal plane. This provided
+                a practical way to monitor ankle dorsiflexion during movement
+                and record measurements for later evaluation.
+            </p>
 
-</section>
+            <figure class="project-figure">
 
+                <img
+                    src="../images/MQP/final-system-diagram.png"
+                    alt="Final one-IMU wearable system architecture"
+                >
 
-<!-- =========================
-     My Contributions
-     ========================= -->
+                <figcaption>
+                    Finalized system architecture used to measure
+                    tibia-over-ankle angle in the sagittal plane.
+                </figcaption>
 
-<section class="project-section">
-
-    <p class="eyebrow">
-        My Contributions
-    </p>
-
-    <h2>
-        My Role in the Project
-    </h2>
-
-    <p>
-        As part of the multidisciplinary project team, I focused primarily
-        on the mechanical design, prototyping, and physical development of
-        the wearable system. My work helped translate the system requirements
-        into manufacturable components that could be integrated with the
-        sensing hardware.
-    </p>
-
-    <ul class="project-contributions">
-
-        <li>
-            Designed and iterated the heel cuff and shank hub components in
-            SolidWorks, developing the geometry around the requirements of
-            the wearable sensing system.
-        </li>
-
-        <li>
-            Developed and refined physical prototypes through FDM 3D printing,
-            using prototype testing to identify fit, stability, assembly, and
-            manufacturability issues and inform subsequent design iterations.
-        </li>
-
-        <li>
-            Contributed to the integration of the mechanical components with
-            the FeatherSense board and IMU, ensuring the sensing hardware could
-            be securely positioned during use.
-        </li>
-
-        <li>
-            Supported the development and testing of the wearable system,
-            including preparation of the device for biomechanical data
-            collection and evaluation of its physical performance.
-        </li>
-
-        <li>
-            Contributed to the iterative engineering process by documenting
-            design changes, evaluating prototype performance, and using
-            testing results to guide subsequent revisions.
-        </li>
-
-    </ul>
-
-</section>
+            </figure>
 
 
-<!-- =========================
-     Outcome
-     ========================= -->
+            <!-- PLACEHOLDER VISUAL:
+                 Full exploded assembly view of the finalized system.
+                 Recommended location: immediately after the final system diagram.
+            -->
 
-<section class="project-highlight">
+            <figure class="project-figure project-figure-large">
 
-    <p class="eyebrow">
-        Outcome
-    </p>
+                <img
+                    src="../images/MQP/PLACEHOLDER-EXPLODED-ASSEMBLY.png"
+                    alt="Exploded assembly view of the finalized wearable system"
+                >
 
-    <h2>
-        Project Outcome
-    </h2>
+                <figcaption>
+                    PLACEHOLDER — Exploded view of the finalized wearable
+                    system showing the major components and their interfaces.
+                </figcaption>
 
-    <p>
-        The project resulted in a functional wearable system capable of
-        measuring tibia-over-ankle angle during loaded movement and presenting
-        the measurement through a MATLAB-based interface. While the original
-        concept included broader movement tracking, force sensing, and
-        real-time injury-risk alerts, the project was ultimately refined into
-        an informative measurement tool that could help users monitor their
-        ankle dorsiflexion and identify potentially concerning movement patterns.
-    </p>
+            </figure>
 
-    <p>
-        The project provided experience taking a multidisciplinary biomedical
-        engineering concept from an initial system proposal through mechanical
-        design, CAD development, physical prototyping, sensor integration,
-        testing, and validation. It also reinforced the importance of
-        adapting system scope to available time and resources while preserving
-        the core engineering objective.
-    </p>
 
-</section>
+            <p>
+                A two-IMU configuration would be required to directly capture
+                relative motion across all three planes of motion. However,
+                the project ultimately focused on sagittal-plane measurement,
+                where the primary ankle motion of interest occurs.
+            </p>
+
+
+            <!-- =========================
+                 Heel Cuff Development
+                 ========================= -->
+
+            <h3>
+                Heel Cuff Development
+            </h3>
+
+            <p>
+                The heel cuff was designed to securely house the FeatherSense
+                board while maintaining a stable connection to the foot during
+                movement. Because the device was intended to measure ankle
+                motion during pickleball, the cuff needed to provide consistent
+                positioning without significantly restricting natural movement.
+            </p>
+
+            <p>
+                The design went through several iterations as the team refined
+                the fit, geometry, component placement, and manufacturability
+                of the enclosure. Prototype testing helped identify issues
+                that were not apparent in the initial CAD designs, leading to
+                changes in the cuff dimensions and overall geometry.
+            </p>
+
+
+            <!-- PLACEHOLDER:
+                 Replace these with the 3–4 strongest heel cuff iterations.
+                 Ideally show a clear left-to-right progression.
+            -->
+
+            <div class="project-image-grid">
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/PLACEHOLDER-HEEL-CUFF-V1.png"
+                        alt="Early heel cuff design iteration"
+                    >
+
+                    <figcaption>
+                        PLACEHOLDER — Early heel cuff design.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/PLACEHOLDER-HEEL-CUFF-V2.png"
+                        alt="Intermediate heel cuff design iteration"
+                    >
+
+                    <figcaption>
+                        PLACEHOLDER — Intermediate heel cuff iteration.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/PLACEHOLDER-HEEL-CUFF-V3.png"
+                        alt="Later heel cuff design iteration"
+                    >
+
+                    <figcaption>
+                        PLACEHOLDER — Later heel cuff iteration.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/mqp-heel-cuff-cad.png"
+                        alt="Final heel cuff design"
+                    >
+
+                    <figcaption>
+                        Final heel cuff design after iterative refinement.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+
+            <!-- =========================
+                 Shank Hub Development
+                 ========================= -->
+
+            <h3>
+                Shank Hub Development
+            </h3>
+
+            <p>
+                The shank hub served as the mounting interface for the inertial
+                measurement unit and provided a consistent reference location
+                along the lower leg. Its geometry was developed around the
+                size and positioning requirements of the IMU while maintaining
+                a secure connection to the shank during movement.
+            </p>
+
+            <p>
+                Several design iterations were used to refine the hub's
+                dimensions, mounting features, and integration with the rest
+                of the wearable system. Testing and prototyping informed
+                changes to improve fit, stability, and ease of assembly while
+                keeping the system lightweight and unobtrusive.
+            </p>
+
+
+            <!-- PLACEHOLDER:
+                 Replace these with the 3–4 strongest shank hub iterations.
+            -->
+
+            <div class="project-image-grid">
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/PLACEHOLDER-SHANK-HUB-V1.png"
+                        alt="Early shank hub design iteration"
+                    >
+
+                    <figcaption>
+                        PLACEHOLDER — Early shank hub design.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/PLACEHOLDER-SHANK-HUB-V2.png"
+                        alt="Intermediate shank hub design iteration"
+                    >
+
+                    <figcaption>
+                        PLACEHOLDER — Intermediate shank hub iteration.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/PLACEHOLDER-SHANK-HUB-V3.png"
+                        alt="Later shank hub design iteration"
+                    >
+
+                    <figcaption>
+                        PLACEHOLDER — Later shank hub iteration.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/V2.3-Structural-Stability-Shank-Hub.png"
+                        alt="Final shank hub design"
+                    >
+
+                    <figcaption>
+                        Final shank hub design after iterative refinement.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Prototyping & Development
+             ========================= -->
+
+        <section class="project-section">
+
+            <p class="eyebrow">
+                Prototyping & Development
+            </p>
+
+            <h2>
+                From CAD to Physical Prototype
+            </h2>
+
+            <p>
+                The finalized designs were converted into physical prototypes
+                using FDM 3D printing. Prototyping allowed the team to evaluate
+                fit, positioning, assembly, and stability of the wearable
+                components before integrating the sensing hardware.
+            </p>
+
+            <p>
+                Physical testing revealed issues that were difficult to identify
+                in CAD alone, including adjustments needed for component fit,
+                attachment, and sensor positioning. These findings were
+                incorporated into subsequent design iterations before the final
+                system was used for data collection.
+            </p>
+
+
+            <div class="project-image-grid">
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/mqp-heel-cuff-prototype.jpg"
+                        alt="3D-printed prototype during development"
+                    >
+
+                    <figcaption>
+                        3D-printed prototype during development.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/mqp-heel-cuff-sensor-integration.png"
+                        alt="Integrated wearable prototype"
+                    >
+
+                    <figcaption>
+                        Integrated wearable prototype with sensing hardware.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+
+            <h3>
+                Final Prototype
+            </h3>
+
+            <p>
+                The completed system integrated the heel cuff, shank hub,
+                and sensing electronics into a wearable assembly. The final
+                prototype was designed to maintain consistent sensor
+                positioning while allowing the user to perform loaded ankle
+                movements representative of those encountered during play.
+            </p>
+
+
+            <!-- IMPORTANT PLACEHOLDER:
+                 Ideally replace this with a strong photo of the completed
+                 system being worn, preferably during testing.
+            -->
+
+            <figure class="project-figure project-figure-large">
+
+                <img
+                    src="../images/MQP/PLACEHOLDER-FINAL-WORN-SYSTEM.jpg"
+                    alt="Final wearable biomechanics system being worn during testing"
+                >
+
+                <figcaption>
+                    PLACEHOLDER — Final integrated wearable system during
+                    biomechanical testing.
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+
+        <!-- =========================
+             Data Collection
+             ========================= -->
+
+        <section class="project-section">
+
+            <p class="eyebrow">
+                Data Collection
+            </p>
+
+            <h2>
+                Measuring Ankle Motion During Pickleball
+            </h2>
+
+            <p>
+                The finalized system was used to measure tibia-over-ankle
+                angle during pickleball movement. The sensing hardware
+                communicated with an IMU mounted in the shank hub, allowing
+                the system to calculate ankle flexion in the sagittal plane.
+            </p>
+
+            <p>
+                The measured angle was displayed through a MATLAB-based
+                application and GUI, allowing users to observe their ankle
+                position during movement and record measurements for later
+                evaluation. This provided a practical way to identify whether
+                an athlete was consistently reaching an appropriate range of
+                loaded dorsiflexion.
+            </p>
+
+
+            <div class="project-image-grid">
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/mqp-testing-setup-2.jpg"
+                        alt="Wearable system during pickleball data collection"
+                    >
+
+                    <figcaption>
+                        Wearable system during movement testing.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/mqp-matlab-gui.png"
+                        alt="MATLAB interface displaying ankle angle measurements"
+                    >
+
+                    <figcaption>
+                        MATLAB-based interface used to display and record
+                        calculated ankle-angle measurements.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+
+            <h3>
+                Using the Measurement in Practice
+            </h3>
+
+            <p>
+                Rather than providing an immediate injury warning, the system
+                was ultimately designed as an informational tool. Recorded
+                measurements could be used to compare ankle motion between
+                the left and right sides and determine whether an athlete
+                was consistently reaching the desired range of loaded
+                dorsiflexion.
+            </p>
+
+            <p>
+                A target range of approximately 15–30° was used as a reference
+                for evaluating ankle motion. Measurements outside this range
+                could indicate an area where additional assessment, training,
+                or preventative strategies may be appropriate.
+            </p>
+
+
+            <p>
+                <a href="../documents/mqp/PLACEHOLDER-DATA-COLLECTION-MATERIALS.pdf"
+                   target="_blank">
+                    View Data Collection Materials →
+                </a>
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             Validation & Testing
+             ========================= -->
+
+        <section class="project-section">
+
+            <p class="eyebrow">
+                Validation & Testing
+            </p>
+
+            <h2>
+                Evaluating Measurement Accuracy
+            </h2>
+
+            <p>
+                With the final wearable configuration established, testing
+                focused on determining whether the system could accurately
+                measure the tibia-over-ankle angle used to characterize loaded
+                ankle dorsiflexion.
+            </p>
+
+            <p>
+                The wearable system's angle measurements were compared against
+                reference measurements obtained from recorded motion. Kinovea
+                was used to analyze the reference motion, allowing the calculated
+                angle from the wearable system to be compared against an
+                independent measurement across a range of ankle positions.
+            </p>
+
+
+            <!-- PLACEHOLDER:
+                 Strongest version is Kinovea screenshot + validation plot
+                 side-by-side.
+            -->
+
+            <div class="project-image-grid">
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/PLACEHOLDER-KINOVEA.png"
+                        alt="Kinovea analysis used as a reference measurement"
+                    >
+
+                    <figcaption>
+                        PLACEHOLDER — Kinovea analysis used to obtain
+                        reference ankle-angle measurements.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-figure">
+
+                    <img
+                        src="../images/MQP/mqp-data-validation-2.png"
+                        alt="Comparison of wearable system measurements with reference angle measurements"
+                    >
+
+                    <figcaption>
+                        Comparison between the wearable system's calculated
+                        tibia-over-ankle angle and the reference measurement.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+
+            <p>
+                The validation testing demonstrated that the system was
+                capable of capturing changes in ankle angle and producing
+                measurements that could be compared against an independent
+                reference. This supported the use of the system as an
+                informational tool for monitoring loaded ankle dorsiflexion.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             Results
+             ========================= -->
+
+        <section class="project-section">
+
+            <p class="eyebrow">
+                Results
+            </p>
+
+            <h2>
+                What We Found
+            </h2>
+
+            <p>
+                The final system successfully measured tibia-over-ankle angle
+                in the sagittal plane and displayed the calculated angle
+                through a MATLAB-based interface. This provided a practical
+                way to monitor loaded ankle dorsiflexion during movement and
+                identify whether measurements fell within the desired
+                15–30° range.
+            </p>
+
+            <p>
+                The results demonstrated the potential for a wearable system
+                to provide users with actionable information about their ankle
+                motion. Rather than directly preventing injury, the system
+                was designed to increase awareness of potentially concerning
+                movement patterns so that preventative measures could be taken.
+            </p>
+
+
+            <figure class="project-figure project-figure-large">
+
+                <img
+                    src="../images/MQP/mqp-ankle-dorsiflexion-rom-results.png"
+                    alt="Key results from biomechanical testing"
+                >
+
+                <figcaption>
+                    Key results demonstrating the system's ability to measure
+                    tibia-over-ankle angle during testing.
+                </figcaption>
+
+            </figure>
+
+
+            <div class="project-results">
+
+                <div>
+                    <strong>Angle Measurement</strong>
+
+                    <p>
+                        The finalized system successfully calculated
+                        tibia-over-ankle angle in the sagittal plane using
+                        the wearable IMU system.
+                    </p>
+                </div>
+
+
+                <div>
+                    <strong>Target Range</strong>
+
+                    <p>
+                        Measurements could be compared against the desired
+                        15–30° range of loaded ankle dorsiflexion to help
+                        identify potentially concerning movement patterns.
+                    </p>
+                </div>
+
+
+                <div>
+                    <strong>System Limitation</strong>
+
+                    <p>
+                        The finalized system measured sagittal-plane motion
+                        using a single IMU. A two-IMU configuration would be
+                        required to directly capture relative motion across
+                        all three planes.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             My Contributions
+             ========================= -->
+
+        <section class="project-section">
+
+            <p class="eyebrow">
+                My Contributions
+            </p>
+
+            <h2>
+                My Role in the Project
+            </h2>
+
+            <p>
+                As part of the multidisciplinary project team, I focused
+                primarily on the mechanical design, prototyping, and physical
+                development of the wearable system. My work helped translate
+                the system requirements into manufacturable components that
+                could be integrated with the sensing hardware.
+            </p>
+
+            <ul class="project-contributions">
+
+                <li>
+                    Designed and iterated the heel cuff and shank hub
+                    components in SolidWorks, developing the geometry around
+                    the requirements of the wearable sensing system.
+                </li>
+
+                <li>
+                    Developed and refined physical prototypes through FDM
+                    3D printing, using prototype testing to identify fit,
+                    stability, assembly, and manufacturability issues and
+                    inform subsequent design iterations.
+                </li>
+
+                <li>
+                    Contributed to the integration of the mechanical
+                    components with the FeatherSense board and IMU, ensuring
+                    the sensing hardware could be securely positioned during use.
+                </li>
+
+                <li>
+                    Supported preparation and testing of the wearable system
+                    for biomechanical data collection and validation.
+                </li>
+
+                <li>
+                    Documented design changes and used prototype observations
+                    and testing results to guide subsequent engineering
+                    revisions.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- =========================
+             Outcome
+             ========================= -->
+
+        <section class="project-highlight">
+
+            <p class="eyebrow">
+                Outcome
+            </p>
+
+            <h2>
+                Project Outcome
+            </h2>
+
+            <p>
+                The project resulted in a functional wearable system capable
+                of measuring tibia-over-ankle angle during loaded movement
+                and presenting the measurement through a MATLAB-based
+                interface. While the original concept included broader
+                movement tracking, force sensing, and real-time injury-risk
+                alerts, the project was ultimately refined into an
+                informational measurement tool that could help users monitor
+                their ankle dorsiflexion and identify potentially concerning
+                movement patterns.
+            </p>
+
+            <p>
+                The project provided experience taking a multidisciplinary
+                biomedical engineering concept from an initial system
+                proposal through mechanical design, CAD development,
+                physical prototyping, sensor integration, testing, and
+                validation. It also reinforced the importance of adapting
+                system scope to available time and resources while preserving
+                the core engineering objective.
+            </p>
+
+        </section>
+
 
         <!-- =========================
              Project Deliverables
@@ -793,15 +956,24 @@
 
             <div class="project-links">
 
-                <a href="../documents/mqp/mqp-final-paper.pdf" target="_blank">
+                <a
+                    href="../documents/mqp/mqp-final-paper.pdf"
+                    target="_blank"
+                >
                     Final Paper →
                 </a>
 
-                <a href="../documents/mqp/mqp-final-presentation.pptx" target="_blank">
+                <a
+                    href="../documents/mqp/mqp-final-presentation.pptx"
+                    target="_blank"
+                >
                     Final Presentation →
                 </a>
 
-                <a href="../documents/mqp/PLACEHOLDER" target="_blank">
+                <a
+                    href="../documents/mqp/PLACEHOLDER-DATA-ANALYSIS"
+                    target="_blank"
+                >
                     Data & Analysis →
                 </a>
 
