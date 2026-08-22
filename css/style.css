@@ -462,13 +462,22 @@ footer {
    ========================= */
 
 .validation-image-grid {
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: 0.65fr 1.35fr;
     align-items: start;
 }
 
+.validation-image-grid .project-figure {
+    width: 100%;
+}
+
 .validation-image-grid .project-figure img {
+    width: 100%;
     height: auto;
     object-fit: contain;
+}
+
+.validation-image-grid .project-figure figcaption {
+    margin-top: 10px;
 }
 
 
