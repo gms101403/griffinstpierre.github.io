@@ -511,6 +511,11 @@ footer {
     margin-right: auto;
 }
 
+.project-figure-medium {
+    max-width: 750px;
+    margin: 2rem auto;
+}
+
 /* =========================
    Project Contributions
    ========================= */
