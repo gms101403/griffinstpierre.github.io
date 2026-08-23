@@ -169,6 +169,17 @@ footer {
     background: #f5f5f5;
 }
 
+/* =========================
+   Text Links
+   ========================= */
+
+a.arrow-link {
+    text-decoration: underline;
+}
+
+a.arrow-link:hover {
+    text-decoration: none;
+}
 
 /* =========================
    Featured Projects
